@@ -1,0 +1,2348 @@
+/*Home Page*/
+body{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #F5F5F5;
+}
+.hero-img{border-radius:20px;overflow:hidden;}
+.hero-img img{width:100%;height:100%;object-fit:cover;}
+.btn-red{background:#e11d2e;color:#fff;border-radius:50px;padding:10px 28px;}
+.btn-outline-black{border-radius:50px;padding:10px 28px;}
+.card-soft{border:0;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
+.step-card{border-radius:18px;padding:30px;border:1px solid #eee;background:#fff;}
+footer a{color:#555;text-decoration:none;font-size:14px;}
+footer a:hover{text-decoration:underline;}
+
+/*earn-3 steps*/
+.home-easy-steps-number-box {
+    height: 32px;
+    width: 32px;
+    background-color: black;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 32px;
+}
+.home-price-active-btn {border-bottom: 4px solid gray; cursor: pointer}
+.home-price-active-btn.active {border-bottom: 4px solid black}
+.footer-menu a{text-decoration: none; }
+.footer-menu a:hover {text-decoration: none; color: green}
+
+/*Benifits list page*/
+.category-section {
+    margin-bottom: 2rem;
+}
+.category-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #333;
+}
+.brand-row {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-row:last-child {
+    border-bottom: none;
+}
+.brand-name {
+    font-size: 0.95rem;
+    color: #333;
+}
+.brand-percentage {
+    font-size: 0.95rem;
+    color: #333;
+}
+/*influencer sign up page*/
+.signup-section {
+    min-height: calc(100vh - 200px);
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+.signup-form-container {
+    max-width: 420px;
+    margin: 0 auto;
+}
+.signup-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #000;
+}
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+.country-code {
+    width: 80px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #000;
+}
+.phone-input {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #000;
+}
+.phone-input:focus, .country-code:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: none;
+}
+.btn-send-otp {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-send-otp:hover {
+    background-color: #000;
+}
+.divider-text {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+.btn-signup-option {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+.btn-signup-option:hover {
+    border-color: #999;
+    background-color: #fafafa;
+}
+.btn-signup-option i,
+.btn-signup-option img {
+    width: 20px;
+    height: 20px;
+}
+.login-link-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+.login-link-text a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.login-link-text a:hover {
+    color: #333;
+}
+/* Dashboard Styles */
+.withdrawal-card {
+    border-radius: 18px;
+    /*box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);*/
+}
+.product-img-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+/*profile details page*/
+.profile-details-navbar {
+    background-color: #fff;
+    padding: 18px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.profile-shell {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.profile-details-navbar .navbar-brand img {
+    height: 22px;
+}
+.profile-details-navbar .user-dropdown {
+    cursor: pointer;
+    font-weight: 600;
+    color: #5a5a5a;
+    font-size: 12px;
+}
+.profile-details-navbar .user-dropdown i {
+    font-size: 10px;
+    margin-left: 6px;
+}
+.profile-section {
+    background-color: #f4f4f4;
+    min-height: calc(100vh - 80px);
+    padding: 96px 0 120px;
+}
+.profile-layout {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.profile-upload-card {
+    margin-bottom: 64px;
+}
+.profile-upload-title {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #0f0f0f;
+}
+.profile-upload-box {
+    width: 250px;
+}
+.profile-avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+.profile-avatar-icon {
+    width: 120px;
+    height: 120px;
+}
+.btn-upload {
+    width: 250px;
+    height: 44px;
+    margin-top: 18px;
+    background-color: #fff;
+    border: 1px solid #161616;
+    border-radius: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2b2b2b;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-upload:hover {
+    background-color: #f8f8f8;
+}
+.profile-form {
+    max-width: 550px;
+    margin-bottom: 96px;
+}
+.form-group-profile {
+    margin-bottom: 34px;
+}
+.form-group-profile:last-of-type {
+    margin-bottom: 50px;
+}
+.form-label-profile {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0f0f0f;
+    display: block;
+}
+.form-input-profile,
+.form-textarea-profile {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #5f5f5f;
+    padding: 12px 14px;
+}
+.form-input-profile {
+    height: 50px;
+}
+.form-textarea-profile {
+    min-height: 109px;
+    resize: none;
+}
+.form-input-profile:focus,
+.form-textarea-profile:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+.btn-submit-profile {
+    background-color: #313131;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    height: 60px;
+    min-width: 146px;
+    padding: 0 32px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-submit-profile:hover {
+    background-color: #1f1f1f;
+}
+.social-media-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 12px 0 34px;
+    color: #0f0f0f;
+}
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    column-gap: 60px;
+    row-gap: 50px;
+}
+.social-column {
+    max-width: 550px;
+}
+.social-input-group {
+    margin-bottom: 24px;
+}
+.social-label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0f0f0f;
+    display: block;
+}
+.social-input-wrapper {
+    position: relative;
+    margin-bottom: 18px;
+}
+.social-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 46px 0 16px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    background-color: #eeeeee;
+    font-size: 12px;
+    color: #6a6a6a;
+}
+.social-input-with-prefix {
+    padding-left: 34px;
+}
+.social-input-prefix {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #808080;
+    font-size: 12px;
+    pointer-events: none;
+}
+.social-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+.social-input-check {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+.social-input-check svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+.btn-social-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    width: 100%;
+    max-width: 375px;
+}
+.btn-facebook {
+    background-color: #1877f2;
+    color: #fff;
+}
+.btn-facebook:hover {
+    background-color: #0c63d4;
+}
+.btn-instagram {
+    background-color: #f6f6f6;
+    color: #000;
+    border-color: #e7e7e7;
+}
+.btn-instagram:hover {
+    background-color: #ededed;
+}
+.btn-google {
+    background-color: #fff;
+    color: #000;
+    border-color: #e5e5e5;
+}
+.btn-google:hover {
+    background-color: #f7f7f7;
+}
+.btn-tiktok {
+    background-color: #161616;
+    color: #fff;
+}
+.btn-tiktok:hover {
+    background-color: #000;
+}
+.google-helper-text {
+    font-size: 11px;
+    color: #6c6c6c;
+    margin: 10px 0 0;
+}
+
+@media (max-width: 768px) {
+    .profile-shell,
+    .profile-layout {
+        padding: 0 16px;
+    }
+    .profile-section {
+        padding: 64px 0 96px;
+    }
+    .profile-upload-box,
+    .profile-avatar,
+    .btn-upload {
+        width: 220px;
+    }
+    .profile-avatar {
+        height: 220px;
+    }
+    .social-grid {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+    .btn-social-login {
+        max-width: 100%;
+    }
+}
+
+/* Partner Sign Up Form Styles */
+.signup-section {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+.signup-container {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 400px;
+}
+.signup-title {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1A1A1A;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-control {
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s;
+}
+.form-control:focus {
+    border-color: #1A1A1A;
+    box-shadow: none;
+    outline: none;
+}
+.form-control::placeholder {
+    color: #BDBDBD;
+}
+.btn-next {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-next:hover {
+    background-color: #000000;
+}
+.login-link {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #666666;
+}
+.login-link a {
+    color: #1A1A1A;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.login-link a:hover {
+    color: #000000;
+}
+
+/* Partner Login Form Styles */
+.login-section {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+.login-container {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 400px;
+}
+.login-title {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1A1A1A;
+}
+.btn-login {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-login:hover {
+    background-color: #000000;
+}
+.forgot-password-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.forgot-password-link a {
+    color: #1A1A1A;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.forgot-password-link a:hover {
+    color: #000000;
+}
+.create-account-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+.create-account-link a {
+    color: #1A1A1A;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.create-account-link a:hover {
+    color: #000000;
+}
+
+/*Partner-Profile-Details page css*/
+.partner-profile-section {
+    background-color: #F5F5F5;
+    min-height: calc(100vh - 80px);
+    padding: 60px 20px;
+}
+.partner-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.partner-upload-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #000000;
+}
+.partner-profile-picture-box {
+    width: 220px;
+    height: 220px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.partner-profile-icon {
+    width: 140px;
+    height: 140px;
+}
+.partner-btn-upload {
+    width: 220px;
+    height: 44px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 22px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 50px;
+}
+.partner-btn-upload:hover {
+    background-color: #F8F8F8;
+}
+.partner-form-label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000000;
+    display: block;
+}
+.partner-form-input {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    color: #333333;
+    padding: 0 16px;
+    margin-bottom: 32px;
+}
+.partner-form-input:focus {
+    outline: none;
+    border-color: #000000;
+}
+.partner-form-textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    color: #333333;
+    padding: 14px 16px;
+    resize: vertical;
+    margin-bottom: 50px;
+}
+.partner-form-textarea:focus {
+    outline: none;
+    border-color: #000000;
+}
+.partner-btn-submit {
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 28px;
+    height: 56px;
+    min-width: 130px;
+    padding: 0 40px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.partner-btn-submit:hover {
+    background-color: #000000;
+}
+
+/*partner profile page css codes*/
+/* Minimal custom CSS - most styling is handled by Bootstrap */
+
+/* Profile Image on Mobile */
+@media (max-width: 767.98px) {
+    .profile-img {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}
+
+/* Nav Pills Custom Styling */
+.profile-nav-pills {
+    gap: 0.5rem;
+}
+
+.profile-nav-pills .nav-link {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.profile-nav-pills .nav-link:hover {
+    background-color: #f5f5f5;
+}
+
+.profile-nav-pills .nav-link.active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Upload box and button sizing */
+.upload-box {
+    width: 200px;
+    height: 200px;
+}
+
+.upload-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.upload-btn {
+    width: 200px;
+    height: 44px;
+}
+
+/* Profile input max-width */
+.profile-input,
+.profile-textarea {
+    max-width: 440px;
+}
+
+/* Mobile responsive for upload box */
+@media (max-width: 767.98px) {
+    .upload-box {
+        width: 240px;
+        height: 240px;
+    }
+
+    .upload-btn {
+        width: 240px;
+    }
+
+    .profile-input,
+    .profile-textarea {
+        max-width: 100%;
+    }
+
+    .profile-nav-pills .nav-link {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* Influencer List Responsive Styles */
+
+/* Header Row - Desktop */
+.influencer-list-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Influencer Items Container */
+.influencer-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Desktop: Remove gap and borders for table-like appearance */
+@media (min-width: 992px) {
+    .influencer-items {
+        gap: 0;
+    }
+
+    .influencer-item {
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .influencer-item:first-child {
+        border-top-left-radius: 0.375rem !important;
+        border-top-right-radius: 0.375rem !important;
+    }
+
+    .influencer-item:last-child {
+        border-bottom-left-radius: 0.375rem !important;
+        border-bottom-right-radius: 0.375rem !important;
+    }
+}
+
+/* Influencer Item Content - Flexbox Layout */
+.influencer-item-content {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+/* Desktop: Adjust padding */
+@media (min-width: 992px) {
+    .influencer-item-content {
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .influencer-item:last-child .influencer-item-content {
+        border-bottom: none;
+    }
+
+    .influencer-item:hover {
+        background-color: #fafafa;
+    }
+}
+
+/* Column Widths */
+.influencer-col-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.influencer-col-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Desktop: Set specific widths for data columns */
+@media (min-width: 992px) {
+    .influencer-col-data {
+        width: 140px;
+        flex-shrink: 0;
+    }
+}
+
+.influencer-col-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Desktop: Set width for action column */
+@media (min-width: 992px) {
+    .influencer-col-action {
+        width: 140px;
+        flex-shrink: 0;
+    }
+}
+
+/* Influencer Avatar */
+.influencer-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+    .influencer-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Influencer Details */
+.influencer-details {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.influencer-name {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 992px) {
+    .influencer-name {
+        font-size: 14px;
+    }
+}
+
+.influencer-link {
+    font-size: 10px;
+    color: #6c757d;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .influencer-link {
+        font-size: 11px;
+    }
+}
+
+.influencer-link:hover {
+    color: #495057;
+}
+
+/* Pagination Styles */
+.pagination .page-link {
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    transition: all 0.2s;
+}
+
+.pagination .page-link:hover {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.pagination .page-item.active .page-link:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+/* Influencer Edit Profile Page */
+/* Influencer Edit Profile Page */
+.influencer-profile-main {
+    background-color: #F5F5F5;
+    min-height: calc(100vh - 80px);
+}
+
+.influencer-profile-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.influencer-logo {
+    height: 22px;
+}
+
+.influencer-user-dropdown {
+    font-size: 12px;
+}
+
+.influencer-profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.influencer-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.influencer-social-icon:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.influencer-profile-header h5 {
+    font-size: 15px;
+}
+
+.influencer-profile-header .small {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+}
+
+.influencer-edit-content .form-label {
+    font-size: 12px;
+}
+
+.influencer-rank-card {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-width: 240px;
+}
+
+.influencer-rank-card .small {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+}
+
+.influencer-badge-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.influencer-nav-tabs {
+    gap: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0.5rem;
+}
+
+.influencer-nav-tabs .nav-link {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.influencer-nav-tabs .nav-link:hover {
+    background-color: #f5f5f5;
+}
+
+.influencer-nav-tabs .nav-link.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.influencer-upload-area {
+    align-items: flex-start;
+}
+
+.influencer-upload-box {
+    width: 180px;
+    height: 180px;
+    border: 1px solid #e5e5e5;
+}
+
+.influencer-upload-btn {
+    width: 180px;
+    padding: 9px 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.influencer-form-stack {
+    max-width: 520px;
+}
+
+.influencer-form-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.influencer-form-input:focus {
+    border-color: #000;
+    box-shadow: none;
+}
+
+.influencer-social-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    padding-right: 40px;
+    font-size: 12px;
+    background-color: #f1f1f1;
+}
+
+.influencer-social-input:focus {
+    border-color: #000;
+    box-shadow: none;
+    outline: none;
+}
+
+.influencer-social-input-prefix {
+    padding-left: 34px;
+}
+
+.influencer-social-prefix {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #808080;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.influencer-social-check {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.influencer-btn-facebook {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.influencer-btn-facebook:hover {
+    background-color: #0c63d4;
+    color: #fff;
+}
+
+.influencer-btn-google {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.influencer-btn-google:hover {
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.influencer-btn-instagram {
+    background-color: #f6f6f6;
+    color: #000;
+    border: 1px solid #e7e7e7;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.influencer-btn-instagram:hover {
+    background-color: #ededed;
+    color: #000;
+}
+
+.influencer-btn-tiktok {
+    background-color: #161616;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.influencer-btn-tiktok:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.influencer-social-action {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .influencer-profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .influencer-upload-area {
+        align-items: center;
+    }
+
+    .influencer-upload-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .influencer-upload-btn {
+        width: 200px;
+    }
+
+    .influencer-nav-tabs .nav-link {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .influencer-rank-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .influencer-social-action {
+        display: block;
+    }
+
+    .influencer-social-action.btn {
+        display: flex;
+    }
+}
+
+/* Influencer Albums Tab */
+.influencer-albums-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.influencer-albums-search,
+.influencer-albums-select {
+    height: 36px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.influencer-albums-filter {
+    height: 36px;
+    padding: 0 22px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.influencer-album-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 16px;
+    padding: 18px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.influencer-album-card-media {
+    padding: 12px;
+}
+
+.influencer-album-card-add {
+    flex-direction: column;
+    text-align: center;
+    color: #3b3b3b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.influencer-album-add-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #2b2b2b;
+    margin-bottom: 12px;
+}
+
+.influencer-album-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.influencer-album-card-collage {
+    align-items: stretch;
+}
+
+.influencer-album-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+}
+
+.influencer-album-collage img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.influencer-album-collage-two img {
+    height: 100%;
+}
+
+.influencer-album-menu-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #3b3b3b;
+}
+
+.influencer-album-menu-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.influencer-album-dropdown {
+    min-width: 230px;
+    border-radius: 12px;
+    padding-bottom: 8px;
+}
+
+.influencer-album-link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.influencer-album-link-row .small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.influencer-albums-pagination {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .influencer-albums-toolbar {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .influencer-albums-search {
+        max-width: 240px;
+    }
+
+    .influencer-albums-select {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .influencer-album-card {
+        height: 240px;
+    }
+
+    .influencer-album-img {
+        height: 100%;
+    }
+}
+
+/* Bank Details Tab Styles */
+.bank-details-content {
+    max-width: 1100px;
+}
+
+.bank-section-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.5;
+}
+
+.bank-form-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.bank-form-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #999;
+}
+
+.bank-form-input:focus {
+    border-color: #000;
+    box-shadow: none;
+    outline: none;
+}
+
+.bank-form-input::placeholder {
+    color: #999;
+}
+
+.bank-upload-area {
+    position: relative;
+    border: 2px dashed #d5d5d5;
+    border-radius: 12px;
+    background-color: #fafafa;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 180px;
+}
+
+.bank-upload-area:hover {
+    background-color: #f5f5f5;
+    border-color: #aaa;
+}
+
+.bank-upload-area.dragover {
+    background-color: #e8f4ff;
+    border-color: #4a90e2;
+}
+
+.bank-upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bank-upload-icon {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-upload-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 6px;
+}
+
+.bank-upload-subtext {
+    font-size: 11px;
+    color: #888;
+}
+
+.bank-upload-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-preview-image {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.bank-remove-file {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    background-color: #ff4444;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.bank-remove-file:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+.bank-submit-btn {
+    background-color: #2b2b2b;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 40px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.bank-submit-btn:hover {
+    background-color: #000;
+}
+
+.bank-or-divider {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    font-weight: 400;
+}
+
+.bank-tin-help {
+    font-size: 11px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.bank-tin-link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.bank-tin-link:hover {
+    color: #333;
+}
+
+.bank-disclaimer {
+    font-size: 10px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.bank-withdrawal-history {
+    margin-top: 40px;
+}
+
+.bank-history-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.bank-history-table {
+    font-size: 11px;
+    margin-bottom: 0;
+}
+
+.bank-history-table thead {
+    background-color: #fafafa;
+}
+
+.bank-history-table thead th {
+    font-weight: 600;
+    color: #000;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 12px 16px;
+    text-transform: capitalize;
+}
+
+.bank-history-table tbody td {
+    padding: 12px 16px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.bank-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.bank-history-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.bank-history-card {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #e5e5e5;
+}
+
+.bank-history-label {
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+}
+
+.bank-history-value {
+    font-size: 11px;
+    color: #000;
+    font-weight: 400;
+}
+
+@media (max-width: 991.98px) {
+    .bank-details-content {
+        padding: 20px !important;
+    }
+
+    .bank-section-title {
+        font-size: 13px;
+    }
+
+    .bank-withdrawal-history {
+        margin-top: 30px;
+    }
+}
+
+/* Sales History Tab Styles */
+.sales-history-content {
+    max-width: 100%;
+}
+
+.sales-tax-banner {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sales-tax-banner i {
+    font-size: 18px;
+    color: #2b2b2b;
+}
+
+.sales-tax-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+
+.sales-tax-red {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.sales-tax-green {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.sales-tax-link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.sales-tax-link:hover {
+    color: #333;
+}
+
+.sales-filter-section {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sales-date-input-wrapper {
+    position: relative;
+}
+
+.sales-date-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    padding-right: 40px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #333;
+}
+
+.sales-date-input:focus {
+    border-color: #000;
+    box-shadow: none;
+    outline: none;
+}
+
+.sales-date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.sales-calendar-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.sales-date-separator {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+
+.sales-filter-btn {
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.sales-filter-btn:hover {
+    background-color: #000;
+}
+
+.sales-table-wrapper {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.sales-history-table {
+    font-size: 12px;
+}
+
+.sales-history-table thead {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sales-history-table thead th {
+    font-weight: 600;
+    color: #000;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.sales-history-table tbody td {
+    padding: 16px 20px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+.sales-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sales-history-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.sales-pagination-wrapper {
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.sales-page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    margin: 0 3px;
+}
+
+.sales-page-link:hover {
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #d0d0d0;
+}
+
+.page-item.active .sales-page-link {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.page-item.active .sales-page-link:hover {
+    background-color: #2b2b2b;
+    border-color: #2b2b2b;
+}
+
+/* Mobile Responsive Styles for Sales History */
+@media (max-width: 991.98px) {
+    .sales-tax-text {
+        font-size: 11px;
+    }
+
+    .sales-tax-banner i {
+        font-size: 16px;
+    }
+
+    .sales-history-table {
+        font-size: 11px;
+    }
+
+    .sales-history-table thead th,
+    .sales-history-table tbody td {
+        padding: 12px 10px;
+    }
+
+    .sales-pagination-wrapper {
+        padding: 16px 10px;
+    }
+
+    .sales-page-link {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin: 0 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sales-tax-text {
+        font-size: 10px;
+    }
+
+    .sales-date-input {
+        font-size: 11px;
+        padding: 8px 12px;
+        padding-right: 35px;
+    }
+
+    .sales-filter-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .sales-history-table {
+        font-size: 10px;
+    }
+
+    .sales-history-table thead th,
+    .sales-history-table tbody td {
+        padding: 10px 8px;
+    }
+
+    .sales-page-link {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
+
+/* Your Earnings Tab Styles */
+.earnings-content {
+    max-width: 100%;
+}
+
+.earnings-tax-banner {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.earnings-tax-banner i {
+    font-size: 18px;
+    color: #2b2b2b;
+}
+
+.earnings-tax-red {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.earnings-tax-green {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.earnings-tax-link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.earnings-tax-link:hover {
+    color: #333;
+}
+
+.earnings-filter-section {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.earnings-download-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.earnings-download-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+.earnings-date-wrapper {
+    position: relative;
+}
+
+.earnings-date-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    padding-right: 40px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #333;
+}
+
+.earnings-date-input:focus {
+    border-color: #000;
+    box-shadow: none;
+    outline: none;
+}
+
+.earnings-date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.earnings-calendar-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.earnings-date-separator {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+
+.earnings-filter-btn {
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.earnings-filter-btn:hover {
+    background-color: #000;
+}
+
+.earnings-summary-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.earnings-privacy-badge {
+    background-color: #e8f5e9;
+    color: #10b981;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.earnings-privacy-badge i {
+    font-size: 10px;
+}
+
+.earnings-chart-wrapper {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.earnings-main-chart {
+    min-height: 350px;
+    width: 100%;
+}
+
+.earnings-balance-card {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.earnings-balance-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.earnings-balance-amount {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.earnings-stats-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.earnings-stat-item-inline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.earnings-stat-label-inline {
+    font-size: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.earnings-stat-value-inline {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2px;
+}
+
+/* Keep old styles for backward compatibility */
+.earnings-stats {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 12px;
+}
+
+.earnings-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.earnings-stat-label {
+    font-size: 9px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.earnings-stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 2px;
+}
+
+.earnings-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.earnings-product-card {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+}
+
+.earnings-product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.earnings-product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.earnings-product-price {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.earnings-product-commission {
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.earnings-product-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 8px;
+}
+
+.earnings-product-weight {
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.earnings-product-chart {
+    min-height: 100px;
+    width: 100%;
+}
+
+.earnings-metric-label {
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+}
+
+.earnings-metric-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 4px;
+}
+
+.earnings-reward-text {
+    font-size: 10px;
+    color: #10b981;
+    margin-top: 2px;
+}
+
+.earnings-pagination-wrapper {
+    padding: 0;
+}
+
+.earnings-page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    margin: 0 3px;
+}
+
+.earnings-page-link:hover {
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #d0d0d0;
+}
+
+.page-item.active .earnings-page-link {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.page-item.active .earnings-page-link:hover {
+    background-color: #2b2b2b;
+    border-color: #2b2b2b;
+}
+
+/* Mobile Responsive Styles for Earnings */
+@media (max-width: 991.98px) {
+    .earnings-tax-banner {
+        font-size: 11px;
+        padding: 10px 14px;
+    }
+
+    .earnings-tax-banner i {
+        font-size: 16px;
+    }
+
+    .earnings-balance-card {
+        margin-top: 16px;
+    }
+
+    .earnings-balance-amount {
+        font-size: 24px;
+    }
+
+    .earnings-stats-row {
+        gap: 12px;
+    }
+
+    .earnings-stat-value-inline {
+        font-size: 11px;
+    }
+
+    .earnings-main-chart {
+        min-height: 300px;
+    }
+
+    .earnings-product-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .earnings-product-chart {
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .earnings-tax-banner {
+        font-size: 10px;
+    }
+
+    .earnings-download-btn {
+        font-size: 11px;
+        padding: 8px 16px;
+        width: 100%;
+    }
+
+    .earnings-date-input {
+        font-size: 11px;
+        padding: 8px 12px;
+        padding-right: 35px;
+    }
+
+    .earnings-filter-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .earnings-balance-amount {
+        font-size: 20px;
+    }
+
+    .earnings-stats-row {
+        gap: 8px;
+    }
+
+    .earnings-stat-label-inline {
+        font-size: 7px;
+    }
+
+    .earnings-stat-value-inline {
+        font-size: 10px;
+    }
+
+    .earnings-main-chart {
+        min-height: 250px;
+    }
+
+    .earnings-product-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .earnings-product-name {
+        font-size: 12px;
+    }
+
+    .earnings-metric-label {
+        font-size: 10px;
+    }
+
+    .earnings-metric-value {
+        font-size: 12px;
+    }
+
+    .earnings-page-link {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
