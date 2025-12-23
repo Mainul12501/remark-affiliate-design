@@ -1945,6 +1945,23 @@ footer a:hover{text-decoration:underline;}
     color: #333;
 }
 
+.earnings-download-section {
+    display: flex;
+    align-items: center;
+}
+
+.earnings-summary-section {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.earnings-balance-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .earnings-filter-section {
     border: 1px solid #e5e5e5;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -2061,7 +2078,7 @@ footer a:hover{text-decoration:underline;}
     border-radius: 12px;
     padding: 16px 20px;
     color: #fff;
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2252,8 +2269,12 @@ footer a:hover{text-decoration:underline;}
         font-size: 16px;
     }
 
-    .earnings-balance-card {
-        margin-top: 16px;
+    .earnings-summary-section {
+        margin-bottom: 16px;
+    }
+
+    .earnings-balance-card-wrapper {
+        margin-top: 0;
     }
 
     .earnings-balance-amount {

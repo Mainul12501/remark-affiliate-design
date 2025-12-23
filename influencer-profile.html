@@ -274,67 +274,100 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="influencer-earnings" role="tabpanel" aria-labelledby="influencer-earnings-tab" tabindex="0">
-                <div class="earnings-content">
+                <div class="earnings-content ">
                     <!-- Tax Banner -->
                     <div class="earnings-tax-banner mb-3">
                         <i class="bi bi-receipt-cutoff me-2"></i>
                         <span>Applicable Tax: <span class="earnings-tax-red">7.5%</span>, <a href="#" class="earnings-tax-link">Submit TIN</a> and reduce <span class="earnings-tax-green">2.5%</span></span>
                     </div>
 
-                    <!-- Download Statement & Filters -->
-                    <div class="earnings-filter-section bg-white rounded-3 p-3 mb-3">
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-3">
-                            <button class="btn earnings-download-btn">
-                                <i class="bi bi-download me-2"></i>
-                                Download Your Earning Statement
-                            </button>
-                        </div>
+                    <!-- Download Statement -->
+                    <div class="earnings-download-section mb-3">
+                        <button class="btn earnings-download-btn">
+                            <i class="bi bi-download me-2"></i>
+                            Download Your Earning Statement
+                        </button>
+                    </div>
 
-                        <!-- Date Range and Filter -->
-                        <div class="row g-3 align-items-end mb-3">
-                            <div class="col-md-4 col-6">
-                                <div class="earnings-date-wrapper position-relative">
-                                    <input type="date" class="form-control earnings-date-input" value="2024-01-01">
-                                    <i class="bi bi-calendar3 earnings-calendar-icon"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-1 col-12 d-none d-md-block text-center">
-                                <span class="earnings-date-separator">To</span>
-                            </div>
-                            <div class="col-md-4 col-6">
-                                <div class="earnings-date-wrapper position-relative">
-                                    <input type="date" class="form-control earnings-date-input" value="2024-01-01">
-                                    <i class="bi bi-calendar3 earnings-calendar-icon"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-12">
-                                <button class="btn btn-dark earnings-filter-btn w-100">Filter</button>
-                            </div>
-                        </div>
-
-                        <!-- Earning Summary Header with Balance Card -->
-                        <div class="row g-3 align-items-center mb-3">
-                            <div class="col-lg-8">
-                                <div class="d-flex align-items-center gap-2">
+                    <!-- Earning Summary & Available Balance Row -->
+                    <div class="row g-3 mb-3 bg-white">
+                        <!-- Left Column: Earning Summary with Filters -->
+                        <div class="col-lg-8">
+                            <div class="earnings-summary-section bg-white rounded-3 p-3 border-0">
+                                <!-- Earning Summary Title -->
+                                <div class="d-flex align-items-center gap-2 mb-3">
                                     <h6 class="earnings-summary-title mb-0">Earning Summary</h6>
                                     <span class="earnings-privacy-badge">
                                         <i class="bi bi-lock-fill me-1"></i>
                                         Privacy Protected
                                     </span>
                                 </div>
+
+                                <!-- Date Range and Filter -->
+                                <div class="row g-2 align-items-end">
+                                    <div class="col-md-5 col-6">
+                                        <div class="earnings-date-wrapper position-relative">
+                                            <input type="date" class="form-control earnings-date-input" value="2024-01-01">
+                                            <i class="bi bi-calendar3 earnings-calendar-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-12 d-none d-md-block text-center mb-2">
+                                        <span class="earnings-date-separator">To</span>
+                                    </div>
+                                    <div class="col-md-5 col-6">
+                                        <div class="earnings-date-wrapper position-relative">
+                                            <input type="date" class="form-control earnings-date-input" value="2024-01-01">
+                                            <i class="bi bi-calendar3 earnings-calendar-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-2 d-md-none">
+                                        <button class="btn btn-dark earnings-filter-btn w-100">Filter</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="earnings-balance-card">
-                                    <p class="earnings-balance-label mb-1">Available Balance</p>
-                                    <h3 class="earnings-balance-amount mb-2">৳50,000</h3>
-                                    <div class="earnings-stats-row">
-                                        <div class="earnings-stat-item-inline">
+                        </div>
+
+                        <!-- Right Column: Available Balance -->
+                        <div class="col-lg-4">
+<!--                            <div class="earnings-balance-card-wrapper">-->
+<!--&lt;!&ndash;                                <button class="btn btn-dark earnings-filter-btn d-none d-md-block mb-2 ms-auto">Filter</button>&ndash;&gt;-->
+<!--                                <div class="earnings-balance-card p-0">-->
+<!--                                    <p class="earnings-balance-label mb-1 border-bottom border-light ps-2">Available Balance</p>-->
+<!--                                    <div class="earnings-stats-row mt-0">-->
+<!--                                        <div class="earnings-stat-item-inline border-light border-end">-->
+<!--                                            <h3 class="earnings-balance-amount me-2 ">৳50,000</h3>-->
+<!--&lt;!&ndash;                                            <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <span class="earnings-stat-value-inline">৳10,00,000</span>&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        <div class="earnings-stat-item-inline border-light border-end">-->
+<!--                                            <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>-->
+<!--                                            <span class="earnings-stat-value-inline">৳10,00,000</span>-->
+<!--                                        </div>-->
+<!--                                        <div class="earnings-stat-item-inline">-->
+<!--                                            <span class="earnings-stat-label-inline">TOTAL EARNING</span>-->
+<!--                                            <span class="earnings-stat-value-inline">৳50,000</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="bg-success" style="border-radius: 15px;">
+                                <h3 class="text-white border-bottom f-s-16 mb-0 py-2 px-2" style="font-size: 16px;">Available Balance</h3>
+                                <div class="row px-2">
+                                    <div class="col-md-4 border-end border-white">
+                                        <div class="py-2">
+                                            <h3 class="earnings-balance-amount me-2 py-2 " style="font-size: 26px;">৳50,000</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 border-end border-white">
+                                        <div class="">
                                             <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>
                                             <span class="earnings-stat-value-inline">৳10,00,000</span>
                                         </div>
-                                        <div class="earnings-stat-item-inline">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="">
                                             <span class="earnings-stat-label-inline">TOTAL EARNING</span>
-                                            <span class="earnings-stat-value-inline">৳50,000</span>
+                                            <span class="earnings-stat-value-inline">৳50,00,000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -358,18 +391,19 @@
                         <!-- Product Item 1 -->
                         <div class="earnings-product-card bg-white rounded-3 p-3 mb-3">
                             <div class="row align-items-center g-3">
-                                <div class="col-lg-2 col-md-3 col-12">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <img src="images/influencer/Rectangle-301.png" alt="Product" class="earnings-product-img">
-                                        <div class="d-lg-none">
-                                            <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                            <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                            <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                            <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 d-none d-lg-block">
+<!--                                <div class="col-lg-2 col-md-3 col-12">-->
+<!--                                    <div class="d-flex align-items-center gap-3">-->
+<!--                                        <img src="images/influencer/botol.png" alt="Product" class="earnings-product-img">-->
+<!--                                        <div class="d-lg-none">-->
+<!--                                            <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>-->
+<!--                                            <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>-->
+<!--                                            <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>-->
+<!--                                            <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="col-lg-4 col-md-3 d-none d-lg-block">
+                                    <img src="images/influencer/botol.png" alt="Product" class="earnings-product-img">
                                     <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
                                     <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
                                     <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
