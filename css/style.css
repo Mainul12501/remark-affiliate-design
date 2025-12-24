@@ -2367,3 +2367,580 @@ footer a:hover{text-decoration:underline;}
         padding: 5px 8px;
     }
 }
+
+/* Dashboard Section Styles */
+/* Profile Card */
+.dashboard-profile-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-profile-img-wrapper {
+    position: relative;
+    background: #f8f8f8;
+    padding: 0;
+}
+
+.dashboard-profile-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.dashboard-badge-wrapper {
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    z-index: 10;
+}
+
+.dashboard-gold-badge {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.dashboard-profile-info {
+    padding: 40px 24px 24px;
+    background: #fff;
+}
+
+.dashboard-profile-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 4px;
+}
+
+.dashboard-profile-role {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Withdrawal Card */
+.dashboard-withdrawal-card {
+    position: relative;
+    background: linear-gradient(180deg, #10b981 0%, #34d399 30%, #6ee7b7 50%, #a7f3d0 70%, #d1fae5 85%, #ffffff 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+}
+
+.dashboard-withdrawal-inner {
+    position: relative;
+    padding: 50px 24px 24px;
+    width: 100%;
+    z-index: 1;
+}
+
+.dashboard-withdrawal-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-withdrawal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.dashboard-withdrawal-label {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.dashboard-withdrawal-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.dashboard-withdrawal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dashboard-transfer-badge {
+    display: inline-block;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.dashboard-date-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.dashboard-date-value {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.dashboard-remaining {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Balance Card */
+.dashboard-balance-card {
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-balance-header {
+    margin-bottom: 32px;
+}
+
+.dashboard-balance-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.dashboard-main-balance {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.dashboard-stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.dashboard-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0;
+}
+
+/* Product List */
+.dashboard-product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-product-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 140px 120px;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dashboard-product-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.dashboard-product-img-wrapper {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+
+.dashboard-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.dashboard-product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dashboard-product-price {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.dashboard-product-code {
+    font-size: 10px;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 0;
+}
+
+.dashboard-product-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+.dashboard-product-weight {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 0;
+}
+
+.dashboard-product-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-product-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+}
+
+.dashboard-stat-line {
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.dashboard-stat-key {
+    font-weight: 600;
+}
+
+.dashboard-stat-val {
+    font-weight: 400;
+}
+
+.dashboard-reward-text {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199.98px) {
+    .dashboard-balance-card {
+        padding: 28px;
+    }
+
+    .dashboard-main-balance {
+        font-size: 36px;
+    }
+
+    .dashboard-product-item {
+        grid-template-columns: 70px 1fr 130px 110px;
+        gap: 16px;
+    }
+
+    .dashboard-product-img-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .dashboard-profile-img {
+        height: 240px;
+    }
+
+    .dashboard-withdrawal-inner {
+        padding: 40px 20px 20px;
+    }
+
+    .dashboard-balance-card {
+        padding: 24px;
+    }
+
+    .dashboard-main-balance {
+        font-size: 32px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 15px;
+    }
+
+    .dashboard-product-item {
+        grid-template-columns: 60px 1fr 120px 100px;
+        gap: 12px;
+    }
+
+    .dashboard-product-img-wrapper {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+
+    .dashboard-product-price {
+        font-size: 11px;
+    }
+
+    .dashboard-product-code {
+        font-size: 9px;
+    }
+
+    .dashboard-product-name {
+        font-size: 11px;
+    }
+
+    .dashboard-product-weight {
+        font-size: 9px;
+    }
+
+    .dashboard-stat-line {
+        font-size: 10px;
+    }
+
+    .dashboard-reward-text {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-profile-img {
+        height: 220px;
+    }
+
+    .dashboard-badge-wrapper {
+        right: 15px;
+        bottom: -25px;
+    }
+
+    .dashboard-gold-badge {
+        width: 75px;
+        height: 85px;
+    }
+
+    .dashboard-profile-info {
+        padding: 35px 20px 20px;
+    }
+
+    .dashboard-profile-name {
+        font-size: 17px;
+    }
+
+    .dashboard-profile-role {
+        font-size: 12px;
+    }
+
+    .dashboard-withdrawal-inner {
+        padding: 35px 18px 18px;
+    }
+
+    .dashboard-withdrawal-content {
+        padding: 20px 16px;
+    }
+
+    .dashboard-withdrawal-amount {
+        font-size: 26px;
+    }
+
+    .dashboard-balance-card {
+        padding: 20px;
+    }
+
+    .dashboard-balance-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-main-balance {
+        font-size: 28px;
+    }
+
+    .dashboard-stat-label {
+        font-size: 9px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 14px;
+    }
+
+    .dashboard-product-item {
+        grid-template-columns: 55px 1fr 100px 90px;
+        gap: 10px;
+        padding-bottom: 16px;
+    }
+
+    .dashboard-product-img-wrapper {
+        width: 55px;
+        height: 55px;
+        padding: 6px;
+    }
+
+    .dashboard-product-price {
+        font-size: 10px;
+    }
+
+    .dashboard-product-code {
+        font-size: 8px;
+    }
+
+    .dashboard-product-name {
+        font-size: 10px;
+    }
+
+    .dashboard-product-weight {
+        font-size: 8px;
+    }
+
+    .dashboard-stat-line {
+        font-size: 9px;
+    }
+
+    .dashboard-reward-text {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dashboard-profile-img {
+        height: 200px;
+    }
+
+    .dashboard-badge-wrapper {
+        right: 12px;
+        bottom: -20px;
+    }
+
+    .dashboard-gold-badge {
+        width: 65px;
+        height: 75px;
+    }
+
+    .dashboard-profile-info {
+        padding: 30px 16px 16px;
+    }
+
+    .dashboard-profile-name {
+        font-size: 15px;
+    }
+
+    .dashboard-profile-role {
+        font-size: 11px;
+    }
+
+    .dashboard-withdrawal-inner {
+        padding: 30px 16px 16px;
+    }
+
+    .dashboard-withdrawal-title {
+        font-size: 12px;
+    }
+
+    .dashboard-withdrawal-content {
+        padding: 18px 14px;
+    }
+
+    .dashboard-withdrawal-label {
+        font-size: 10px;
+    }
+
+    .dashboard-withdrawal-amount {
+        font-size: 24px;
+    }
+
+    .dashboard-transfer-badge {
+        font-size: 10px;
+        padding: 5px 12px;
+    }
+
+    .dashboard-balance-card {
+        padding: 16px;
+    }
+
+    .dashboard-balance-title {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .dashboard-main-balance {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .dashboard-stat-label {
+        font-size: 8px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 13px;
+    }
+
+    .dashboard-product-item {
+        grid-template-columns: 50px 1fr 90px 80px;
+        gap: 8px;
+        padding-bottom: 14px;
+    }
+
+    .dashboard-product-img-wrapper {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .dashboard-product-price {
+        font-size: 9px;
+    }
+
+    .dashboard-product-code {
+        font-size: 7px;
+    }
+
+    .dashboard-product-name {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .dashboard-product-weight {
+        font-size: 7px;
+    }
+
+    .dashboard-stat-line {
+        font-size: 8px;
+    }
+
+    .dashboard-stat-key,
+    .dashboard-stat-val {
+        display: block;
+    }
+
+    .dashboard-reward-text {
+        font-size: 7px;
+    }
+}

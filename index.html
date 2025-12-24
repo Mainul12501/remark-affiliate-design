@@ -85,45 +85,40 @@
 <!-- Dashboard Preview -->
 <section class="py-5 bg-light">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
                 <div class="row g-4">
                     <!-- Left Column - Profile & Withdrawal -->
                     <div class="col-lg-4">
                         <!-- Profile Card -->
-                        <div class="card bg-transparent border-0 mb-3 position-relative" style="overflow: visible;">
-                            <div class="card-body p-0">
-                                <div class="profile-img-wrapper position-relative">
-                                    <img src="images/home/NIOR%20-%20Honey%20Hydration%20Body%20Lotion%20(1).png" class="img-fluid" style="border-radius: 20px 20px 0 0; height: 280px; width: 88%" alt="Profile">
-                                    <!-- Gold Badge -->
-                                    <div class="position-absolute" style="bottom: -25px; right: 20px;">
-                                        <img src="images/home/gold-badge.png" alt="Gold Badge" style="width: 90px; height: 100px;">
-                                    </div>
+                        <div class="dashboard-profile-card card bg-white border-0 mb-4 position-relative">
+                            <div class="dashboard-profile-img-wrapper">
+                                <img src="images/home/NIOR%20-%20Honey%20Hydration%20Body%20Lotion%20(1).png" class="dashboard-profile-img" alt="Profile">
+                                <!-- Gold Badge -->
+                                <div class="dashboard-badge-wrapper">
+                                    <img src="images/home/gold-badge.png" alt="Gold Badge" class="dashboard-gold-badge">
                                 </div>
-                                <div class="p-4 pt-4">
-                                    <h5 class="fw-bold mb-0">Sadia A. Suchita</h5>
-                                    <p class="text-muted mb-0">Model & Influencer</p>
-                                </div>
+                            </div>
+                            <div class="dashboard-profile-info">
+                                <h5 class="dashboard-profile-name">Sadia A. Suchita</h5>
+                                <p class="dashboard-profile-role">Model & Influencer</p>
                             </div>
                         </div>
 
                         <!-- Last Withdrawal Card -->
-                        <div class="card bg-transparent border-0 withdrawal-card" style="background-image: url('images/home/bg-img.jpg'); background-repeat: no-repeat; ">
-                            <div class="card-body p-4 text-white">
-                                <h6 class="m-t-45 f-s-16 fw-bold text-center">LAST WITHDRAWAL</h6>
-                                <div class="text-center mb-3 text-dark">
-                                    <div class="card border-0 bg-light mx-5">
-                                        <p class="mb-1 small pt-4 f-s-10">Withdrawal Balance</p>
-                                        <h2 class="fw-bold mb-0 pt-3 f-s-20">৳25,000</h2>
-                                        <div class="small text-dark f-s-10 text-muted">
-                                            <p class="mb-1 fw-semibold btn btn-light f-s-10 text-dark">By Bank Transfer</p>
-                                            <p class="mb-1"><strong>Transaction Date:</strong></p>
-                                            <p class="mb-3">25-08-2025 | 4:03 PM</p>
-                                            <p class="mb-0 f-s-10"><strong>Remaining Balance:</strong> ৳25,000</p>
-                                        </div>
+                        <div class="dashboard-withdrawal-card">
+                            <div class="dashboard-withdrawal-inner">
+                                <h6 class="dashboard-withdrawal-title">LAST WITHDRAWAL</h6>
+                                <div class="dashboard-withdrawal-content">
+                                    <p class="dashboard-withdrawal-label">Withdrawal Balance</p>
+                                    <h2 class="dashboard-withdrawal-amount">৳25,000</h2>
+                                    <div class="dashboard-withdrawal-details">
+                                        <span class="dashboard-transfer-badge">By Bank Transfer</span>
+                                        <p class="dashboard-date-label">Transaction Date:</p>
+                                        <p class="dashboard-date-value">25-08-2025 | 4:03 PM</p>
+                                        <p class="dashboard-remaining">Remaining Balance: ৳25,000</p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -131,161 +126,119 @@
                     <!-- Right Column - Balance & Products -->
                     <div class="col-lg-8">
                         <!-- Balance Card -->
-                        <div class="card card-soft border-0 mb-3">
-                            <div class="card-body p-4">
-                                <h5 class="fw-bold mb-4 f-s-16">Available Balance</h5>
-                                <div class="row align-items-center mb-4">
+                        <div class="dashboard-balance-card card bg-white border-0">
+                            <div class="dashboard-balance-header">
+                                <h5 class="dashboard-balance-title">Available Balance</h5>
+                                <div class="row align-items-center">
                                     <div class="col-md-4">
-                                        <h1 class="fw-bold mb-0 f-s-26" >৳50,000</h1>
+                                        <h1 class="dashboard-main-balance">৳50,000</h1>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="row">
+                                        <div class="row g-3">
                                             <div class="col-6">
-                                                <p class="text-muted small mb-1 f-s-11">TOTAL CONVERSION</p>
-                                                <h5 class="fw-bold mb-0 f-s-16">৳10,00,000</h5>
+                                                <p class="dashboard-stat-label">TOTAL CONVERSION</p>
+                                                <h5 class="dashboard-stat-value">৳10,00,000</h5>
                                             </div>
                                             <div class="col-6">
-                                                <p class="text-muted small mb-1 f-s-11">TOTAL EARNING</p>
-                                                <h5 class="fw-bold mb-0 f-s-16">৳50,00000</h5>
+                                                <p class="dashboard-stat-label">TOTAL EARNING</p>
+                                                <h5 class="dashboard-stat-value">৳50,000</h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Product List -->
-                                <div class="product-list">
-                                    <!-- Product Item 1 -->
-                                    <div class="row align-items-center mb-3 pb-3 border-bottom">
-                                        <div class="col-2">
-                                            <div class="product-img-box p-2 bg-light rounded">
-                                                <img src="images/home/sry.png" class="img-fluid" alt="Product">
-                                            </div>
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="small">
-                                                <p class="mb-0 fw-semibold">NIOR ৳400</p>
-                                                <p class="mb-0 text-success small">BLAZE-O-40%</p>
-                                                <p class="mb-0 fw-bold">Purple Purifying Face Wash</p>
-                                                <p class="mb-0 fw-bold">Cucumber Quench</p>
-                                                <p class="mb-0 text-muted small">Net Weight: 250ml</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="chart-placeholder">
-                                                <!--                                                <svg width="100%" height="40" viewBox="0 0 120 40">-->
-                                                <!--                                                    <defs>-->
-                                                <!--                                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">-->
-                                                <!--                                                            <stop offset="0%" style="stop-color:#4ade80;stop-opacity:0.3" />-->
-                                                <!--                                                            <stop offset="100%" style="stop-color:#4ade80;stop-opacity:0" />-->
-                                                <!--                                                        </linearGradient>-->
-                                                <!--                                                    </defs>-->
-                                                <!--                                                    <path d="M 0 35 Q 20 30, 40 25 T 80 15 T 120 10 L 120 40 L 0 40 Z" fill="url(#grad1)" stroke="#4ade80" stroke-width="2" fill-opacity="0.5"/>-->
-                                                <!--                                                </svg>-->
-                                                <div id="chart-1" style="height:45px;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 text-end small">
-                                            <p class="mb-0"><strong>Quantity:</strong> 8</p>
-                                            <p class="mb-0"><strong>Total Sales:</strong> ৳3,600</p>
-                                            <p class="mb-0"><strong>Earning:</strong> ৳400</p>
-                                            <p class="mb-0 text-muted">[Reward 10%]</p>
-                                        </div>
+                            <!-- Product List -->
+                            <div class="dashboard-product-list">
+                                <!-- Product Item 1 -->
+                                <div class="dashboard-product-item">
+                                    <div class="dashboard-product-img-wrapper">
+                                        <img src="images/home/sry.png" class="dashboard-product-img" alt="Product">
                                     </div>
-
-                                    <!-- Product Item 2 -->
-                                    <div class="row align-items-center mb-3 pb-3 border-bottom">
-                                        <div class="col-2">
-                                            <div class="product-img-box p-2 bg-light rounded">
-                                                <img src="images/home/sry.png" class="img-fluid" alt="Product">
-                                            </div>
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="small">
-                                                <p class="mb-0 fw-semibold">NIOR ৳400</p>
-                                                <p class="mb-0 text-success small">BLAZE-O-40%</p>
-                                                <p class="mb-0 fw-bold">Purple Purifying Face Wash</p>
-                                                <p class="mb-0 fw-bold">Cucumber Quench</p>
-                                                <p class="mb-0 text-muted small">Net Weight: 350ml</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="chart-placeholder">
-                                                <!--                                                <svg width="100%" height="40" viewBox="0 0 120 40">-->
-                                                <!--                                                    <path d="M 0 30 Q 20 25, 40 28 T 80 18 T 120 12 L 120 40 L 0 40 Z" fill="url(#grad1)" stroke="#4ade80" stroke-width="2" fill-opacity="0.5"/>-->
-                                                <!--                                                </svg>-->
-                                                <div id="chart-2" style="height:45px;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 text-end small">
-                                            <p class="mb-0"><strong>Quantity:</strong> 8</p>
-                                            <p class="mb-0"><strong>Total Sales:</strong> ৳3,600</p>
-                                            <p class="mb-0"><strong>Earning:</strong> ৳400</p>
-                                            <p class="mb-0 text-muted">[Reward 10%]</p>
-                                        </div>
+                                    <div class="dashboard-product-details">
+                                        <p class="dashboard-product-price">NIOR ৳400</p>
+                                        <p class="dashboard-product-code">BLAZE-O-40%</p>
+                                        <p class="dashboard-product-name">Purple Purifying Face Wash</p>
+                                        <p class="dashboard-product-name">Cucumber Quench</p>
+                                        <p class="dashboard-product-weight">Net Weight: 250ml</p>
                                     </div>
-
-                                    <!-- Product Item 3 -->
-                                    <div class="row align-items-center mb-3 pb-3 border-bottom">
-                                        <div class="col-2">
-                                            <div class="product-img-box p-2 bg-light rounded">
-                                                <img src="images/home/sry.png" class="img-fluid" alt="Product">
-                                            </div>
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="small">
-                                                <p class="mb-0 fw-semibold">NIOR ৳400</p>
-                                                <p class="mb-0 text-success small">BLAZE-O-40%</p>
-                                                <p class="mb-0 fw-bold">Purple Purifying Face Wash</p>
-                                                <p class="mb-0 fw-bold">Cucumber Quench</p>
-                                                <p class="mb-0 text-muted small">Net Weight: 250ml</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="chart-placeholder">
-                                                <!--                                                <svg width="100%" height="40" viewBox="0 0 120 40">-->
-                                                <!--                                                    <path d="M 0 32 Q 20 28, 40 22 T 80 20 T 120 15 L 120 40 L 0 40 Z" fill="url(#grad1)" stroke="#4ade80" stroke-width="2" fill-opacity="0.5"/>-->
-                                                <!--                                                </svg>-->
-                                                <div id="chart-3" style="height:45px;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 text-end small">
-                                            <p class="mb-0"><strong>Quantity:</strong> 8</p>
-                                            <p class="mb-0"><strong>Total Sales:</strong> ৳3,600</p>
-                                            <p class="mb-0"><strong>Earning:</strong> ৳400</p>
-                                            <p class="mb-0 text-muted">[Reward 10%]</p>
-                                        </div>
+                                    <div class="dashboard-product-chart">
+                                        <div id="chart-1" style="height:50px; width:100%;"></div>
                                     </div>
+                                    <div class="dashboard-product-stats">
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Quantity:</span> <span class="dashboard-stat-val">8</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Total Sales:</span> <span class="dashboard-stat-val">৳3,600</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Earning:</span> <span class="dashboard-stat-val">৳400</span></p>
+                                        <p class="dashboard-reward-text">[Reward 10%]</p>
+                                    </div>
+                                </div>
 
-                                    <!-- Product Item 4 -->
-                                    <div class="row align-items-center">
-                                        <div class="col-2">
-                                            <div class="product-img-box p-2 bg-light rounded">
-                                                <img src="images/home/sry.png" class="img-fluid" alt="Product">
-                                            </div>
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="small">
-                                                <p class="mb-0 fw-semibold">NIOR ৳400</p>
-                                                <p class="mb-0 text-success small">BLAZE-O-40%</p>
-                                                <p class="mb-0 fw-bold">Purple Purifying Face Wash</p>
-                                                <p class="mb-0 fw-bold">Cucumber Quench</p>
-                                                <p class="mb-0 text-muted small">Net Weight: 250ml</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="chart-placeholder">
-                                                <!--                                                <svg width="100%" height="40" viewBox="0 0 120 40">-->
-                                                <!--                                                    <path d="M 0 33 Q 20 30, 40 24 T 80 22 T 120 18 L 120 40 L 0 40 Z" fill="url(#grad1)" stroke="#4ade80" stroke-width="2" fill-opacity="0.5"/>-->
-                                                <!--                                                </svg>-->
-                                                <div id="chart-4" style="height:45px;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 text-end small">
-                                            <p class="mb-0"><strong>Quantity:</strong> 8</p>
-                                            <p class="mb-0"><strong>Total Sales:</strong> ৳3,600</p>
-                                            <p class="mb-0"><strong>Earning:</strong> ৳400</p>
-                                            <p class="mb-0 text-muted">[Reward 10%]</p>
-                                        </div>
+                                <!-- Product Item 2 -->
+                                <div class="dashboard-product-item">
+                                    <div class="dashboard-product-img-wrapper">
+                                        <img src="images/home/sry.png" class="dashboard-product-img" alt="Product">
+                                    </div>
+                                    <div class="dashboard-product-details">
+                                        <p class="dashboard-product-price">NIOR ৳400</p>
+                                        <p class="dashboard-product-code">BLAZE-O-40%</p>
+                                        <p class="dashboard-product-name">Purple Purifying Face Wash</p>
+                                        <p class="dashboard-product-name">Cucumber Quench</p>
+                                        <p class="dashboard-product-weight">Net Weight: 350ml</p>
+                                    </div>
+                                    <div class="dashboard-product-chart">
+                                        <div id="chart-2" style="height:50px; width:100%;"></div>
+                                    </div>
+                                    <div class="dashboard-product-stats">
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Quantity:</span> <span class="dashboard-stat-val">8</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Total Sales:</span> <span class="dashboard-stat-val">৳3,600</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Earning:</span> <span class="dashboard-stat-val">৳400</span></p>
+                                        <p class="dashboard-reward-text">[Reward 10%]</p>
+                                    </div>
+                                </div>
+
+                                <!-- Product Item 3 -->
+                                <div class="dashboard-product-item">
+                                    <div class="dashboard-product-img-wrapper">
+                                        <img src="images/home/sry.png" class="dashboard-product-img" alt="Product">
+                                    </div>
+                                    <div class="dashboard-product-details">
+                                        <p class="dashboard-product-price">NIOR ৳400</p>
+                                        <p class="dashboard-product-code">BLAZE-O-40%</p>
+                                        <p class="dashboard-product-name">Purple Purifying Face Wash</p>
+                                        <p class="dashboard-product-name">Cucumber Quench</p>
+                                        <p class="dashboard-product-weight">Net Weight: 250ml</p>
+                                    </div>
+                                    <div class="dashboard-product-chart">
+                                        <div id="chart-3" style="height:50px; width:100%;"></div>
+                                    </div>
+                                    <div class="dashboard-product-stats">
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Quantity:</span> <span class="dashboard-stat-val">8</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Total Sales:</span> <span class="dashboard-stat-val">৳3,600</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Earning:</span> <span class="dashboard-stat-val">৳400</span></p>
+                                        <p class="dashboard-reward-text">[Reward 10%]</p>
+                                    </div>
+                                </div>
+
+                                <!-- Product Item 4 -->
+                                <div class="dashboard-product-item">
+                                    <div class="dashboard-product-img-wrapper">
+                                        <img src="images/home/sry.png" class="dashboard-product-img" alt="Product">
+                                    </div>
+                                    <div class="dashboard-product-details">
+                                        <p class="dashboard-product-price">NIOR ৳400</p>
+                                        <p class="dashboard-product-code">BLAZE-O-40%</p>
+                                        <p class="dashboard-product-name">Purple Purifying Face Wash</p>
+                                        <p class="dashboard-product-name">Cucumber Quench</p>
+                                        <p class="dashboard-product-weight">Net Weight: 250ml</p>
+                                    </div>
+                                    <div class="dashboard-product-chart">
+                                        <div id="chart-4" style="height:50px; width:100%;"></div>
+                                    </div>
+                                    <div class="dashboard-product-stats">
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Quantity:</span> <span class="dashboard-stat-val">8</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Total Sales:</span> <span class="dashboard-stat-val">৳3,600</span></p>
+                                        <p class="dashboard-stat-line"><span class="dashboard-stat-key">Earning:</span> <span class="dashboard-stat-val">৳400</span></p>
+                                        <p class="dashboard-reward-text">[Reward 10%]</p>
                                     </div>
                                 </div>
                             </div>
@@ -326,9 +279,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-red btn-danger">Sign Up Today</a>
-                    <a class="btn btn-outline-black btn-outline-dark ms-2">View Benefits & Earnings</a>
+                <div class="text-center mt-4 d-md-none">
+                    <a class="btn btn-red btn-danger mt-2">Sign Up Today</a>
+                    <a class="btn btn-outline-black btn-outline-dark ms-2 mt-2">View Benefits & Earnings</a>
                 </div>
             </div>
         </div>
