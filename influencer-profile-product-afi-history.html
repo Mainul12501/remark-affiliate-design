@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herlan Affluencer - Influencer Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        /* Affiliate History Specific Styles */
+        .aff-product-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .aff-product-img {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .aff-product-date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .aff-product-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .aff-primary-link-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .aff-copy-btn {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: #333;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+        }
+
+        .aff-copy-btn:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
+        .aff-short-url {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .aff-original-url {
+            font-size: 11px;
+            color: #888;
+            word-break: break-all;
+        }
+
+        .aff-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .aff-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .aff-stat-item i {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .aff-link-input-wrapper {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .aff-link-input {
+            flex: 1;
+            max-width: 200px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #333;
+            background: #fff;
+        }
+
+        .aff-link-input:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .aff-generate-btn {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .aff-generate-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .aff-menu-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: all 0.2s;
+        }
+
+        .aff-menu-btn:hover {
+            background: #f5f5f5;
+            color: #000;
+        }
+
+        /* Links Section */
+        .aff-links-section {
+            margin-top: 32px;
+        }
+
+        .aff-links-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .aff-link-item {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .aff-link-item-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+            padding-right: 40px;
+        }
+
+        .aff-link-item-url {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .aff-link-item-original {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+
+        .aff-link-item-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .aff-link-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .aff-link-stat i {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .aff-link-date {
+            font-size: 12px;
+            color: #888;
+            margin-left: auto;
+        }
+
+        .aff-link-menu {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: all 0.2s;
+        }
+
+        .aff-link-menu:hover {
+            background: #f5f5f5;
+            color: #000;
+        }
+
+        /* Pagination */
+        .aff-pagination {
+            margin-top: 24px;
+        }
+
+        .aff-pagination .page-link {
+            border: 1px solid #e5e5e5;
+            color: #333;
+            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin: 0 3px;
+            transition: all 0.2s;
+        }
+
+        .aff-pagination .page-link:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
+        .aff-pagination .page-item.active .page-link {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 767.98px) {
+            .aff-product-card {
+                padding: 16px;
+                text-align: center;
+            }
+
+            .aff-product-img {
+                max-width: 180px;
+                margin: 0 auto 16px;
+                display: block;
+            }
+
+            .aff-product-date {
+                text-align: left;
+            }
+
+            .aff-menu-btn {
+                top: 12px;
+                right: 12px;
+                width: 32px;
+                height: 32px;
+            }
+
+            .aff-product-title {
+                font-size: 15px;
+                text-align: left;
+            }
+
+            .aff-primary-link-label,
+            .aff-short-url,
+            .aff-original-url {
+                text-align: left;
+            }
+
+            .aff-stats {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            .aff-link-input-wrapper {
+                flex-direction: column;
+            }
+
+            .aff-link-input {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .aff-generate-btn {
+                width: 100%;
+            }
+
+            .aff-link-item {
+                padding: 16px;
+            }
+
+            .aff-link-item-stats {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            .aff-link-date {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+        /* Rank Badge Styles */
+        .aff-rank-badge {
+            background: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 50%, #A8A8A8 100%);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .aff-rank-badge-text {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .aff-rank-badge-stars {
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-white border-bottom py-3">
+    <div class="container-fluid px-4">
+        <a href="index.html" class="navbar-brand">
+            <img src="images/home/home-logo.png" alt="site-logo" class="influencer-logo">
+        </a>
+
+        <!-- Desktop Dropdown -->
+        <div class="dropdown d-none d-md-block">
+            <a href="#" class="text-decoration-none text-secondary dropdown-toggle fw-semibold influencer-user-dropdown" data-bs-toggle="dropdown">
+                John Doe <i class="bi bi-caret-down-fill ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="navbar-toggler border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <i class="bi bi-list fs-3"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu Offcanvas -->
+<div class="offcanvas offcanvas-end d-md-none" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Profile</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Settings</a></li>
+            <li><a href="#" class="text-decoration-none text-dark">Logout</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="influencer-profile-main">
+    <div class="container-fluid px-md-4 px-3 py-4 influencer-profile-shell">
+
+        <!-- Profile Header Section -->
+        <div class="influencer-profile-header mb-4">
+            <div class="row g-4 align-items-center">
+                <!-- Profile Info Column -->
+                <div class="col-lg-7">
+                    <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                        <img src="images/home/sry.png" alt="Profile Picture" class="influencer-profile-img">
+                        <div class="text-center text-md-start">
+                            <h5 class="fw-bold mb-1">Sadiya A. Suchita</h5>
+                            <p class="text-muted small mb-2">MODEL & INFLUENCER</p>
+                            <div class="d-flex justify-content-center justify-content-md-start gap-2 mb-3">
+                                <a href="#" class="influencer-social-icon"><i class="bi bi-tiktok"></i></a>
+                                <a href="#" class="influencer-social-icon"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="influencer-social-icon"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="influencer-social-icon"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <div class="influencer-referral-link">
+                                <p class="small fw-semibold mb-1">REFERRAL LINK:</p>
+                                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-center justify-content-center justify-content-md-start gap-2">
+                                    <span class="small text-muted text-break">https://herlan.com/sadiya_a_suchita</span>
+                                    <button class="btn btn-dark btn-sm rounded-pill px-3 py-1">Copy Link</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rank Card Column -->
+                <div class="col-lg-5">
+                    <div class="d-flex justify-content-center justify-content-lg-end">
+                        <div class="influencer-rank-card bg-white rounded-3 p-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="aff-rank-badge">
+                                    <div class="aff-rank-badge-text">Silver</div>
+                                    <div class="aff-rank-badge-stars">&#9733;&#9733;</div>
+                                </div>
+                                <div>
+                                    <p class="small text-muted mb-0">RANK</p>
+                                    <h5 class="fw-bold mb-2">Silver</h5>
+                                    <div class="row g-3">
+                                        <div class="col-6">
+                                            <p class="small text-muted mb-0">AVAILABLE BALANCE</p>
+                                            <p class="fw-bold mb-0">৳5,000</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="small text-muted mb-0">THIS MONTH SOLD</p>
+                                            <p class="fw-bold mb-0">50 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-pills influencer-nav-tabs mb-4 d-flex flex-nowrap overflow-auto pb-2" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="influencer-albums-tab" data-bs-toggle="pill" data-bs-target="#influencer-albums" type="button" role="tab">Albums</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="influencer-earnings-tab" data-bs-toggle="pill" data-bs-target="#influencer-earnings" type="button" role="tab">Your Earnings</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="influencer-edit-profile-tab" data-bs-toggle="pill" data-bs-target="#influencer-edit-profile" type="button" role="tab">Edit Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="influencer-bank-details-tab" data-bs-toggle="pill" data-bs-target="#influencer-bank-details" type="button" role="tab">Bank Details</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="influencer-sales-history-tab" data-bs-toggle="pill" data-bs-target="#influencer-sales-history" type="button" role="tab">Sales History</button>
+            </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content">
+            <!-- Albums Tab (Active) -->
+            <div class="tab-pane fade show active" id="influencer-albums" role="tabpanel">
+
+                <!-- Featured Product Card -->
+                <div class="aff-product-card mb-4">
+                    <!-- Menu Button -->
+                    <div class="dropdown">
+                        <button class="aff-menu-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <!-- Product Image -->
+                        <div class="col-md-4 col-lg-3 mb-3 mb-md-0">
+                            <img src="images/home/Cream-(8).jpg" alt="NIOR Anti-Aging Cream" class="aff-product-img d-block mx-auto mx-md-0">
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="col-md-8 col-lg-9">
+                            <p class="aff-product-date">Jul 26, 2025</p>
+                            <h4 class="aff-product-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h4>
+
+                            <div class="mb-3">
+                                <span class="aff-primary-link-label">Primary Link:</span>
+                                <button class="aff-copy-btn ms-2">
+                                    <i class="bi bi-copy"></i> Copy
+                                </button>
+                            </div>
+
+                            <p class="aff-short-url mb-1">https://herlan.com/4ILSFBJ</p>
+                            <p class="aff-original-url">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                            <div class="aff-stats">
+                                <div class="aff-stat-item">
+                                    <i class="bi bi-bar-chart-fill"></i>
+                                    <span>Total Visitor: <strong>250</strong></span>
+                                </div>
+                                <div class="aff-stat-item">
+                                    <i class="bi bi-bag-fill"></i>
+                                    <span>Total Purchase: <strong>24</strong></span>
+                                </div>
+                                <div class="aff-stat-item">
+                                    <i class="bi bi-clock-fill"></i>
+                                    <span>Total Revenue: <strong>৳5,000</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="aff-link-input-wrapper">
+                                <input type="text" class="aff-link-input" value="https://herlan.com/4ILSFBJ" readonly>
+                                <button class="aff-generate-btn">Generate New Link</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Links Section -->
+                <div class="aff-links-section">
+                    <p class="aff-links-title">Links:</p>
+
+                    <!-- Link Item 1 -->
+                    <div class="aff-link-item">
+                        <div class="dropdown">
+                            <button class="aff-link-menu dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                            </ul>
+                        </div>
+
+                        <h5 class="aff-link-item-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h5>
+                        <div class="aff-link-item-url">
+                            <span>https://herlan.com/4ILSFBJ</span>
+                            <button class="aff-copy-btn">
+                                <i class="bi bi-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="aff-link-item-original">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                        <div class="aff-link-item-stats">
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <span>Visitor: <strong>250</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bag-fill"></i>
+                                <span>Purchase: <strong>24</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Revenue: <strong>৳5,000</strong></span>
+                            </div>
+                            <span class="aff-link-date">Jul 26, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Link Item 2 -->
+                    <div class="aff-link-item">
+                        <div class="dropdown">
+                            <button class="aff-link-menu dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                            </ul>
+                        </div>
+
+                        <h5 class="aff-link-item-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h5>
+                        <div class="aff-link-item-url">
+                            <span>https://herlan.com/4ILSFBJ</span>
+                            <button class="aff-copy-btn">
+                                <i class="bi bi-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="aff-link-item-original">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                        <div class="aff-link-item-stats">
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <span>Visitor: <strong>250</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bag-fill"></i>
+                                <span>Purchase: <strong>24</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Revenue: <strong>৳5,000</strong></span>
+                            </div>
+                            <span class="aff-link-date">Jul 26, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Link Item 3 -->
+                    <div class="aff-link-item">
+                        <div class="dropdown">
+                            <button class="aff-link-menu dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                            </ul>
+                        </div>
+
+                        <h5 class="aff-link-item-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h5>
+                        <div class="aff-link-item-url">
+                            <span>https://herlan.com/4ILSFBJ</span>
+                            <button class="aff-copy-btn">
+                                <i class="bi bi-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="aff-link-item-original">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                        <div class="aff-link-item-stats">
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <span>Visitor: <strong>250</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bag-fill"></i>
+                                <span>Purchase: <strong>24</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Revenue: <strong>৳5,000</strong></span>
+                            </div>
+                            <span class="aff-link-date">Jul 26, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Link Item 4 -->
+                    <div class="aff-link-item">
+                        <div class="dropdown">
+                            <button class="aff-link-menu dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                            </ul>
+                        </div>
+
+                        <h5 class="aff-link-item-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h5>
+                        <div class="aff-link-item-url">
+                            <span>https://herlan.com/4ILSFBJ</span>
+                            <button class="aff-copy-btn">
+                                <i class="bi bi-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="aff-link-item-original">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                        <div class="aff-link-item-stats">
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <span>Visitor: <strong>250</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bag-fill"></i>
+                                <span>Purchase: <strong>24</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Revenue: <strong>৳5,000</strong></span>
+                            </div>
+                            <span class="aff-link-date">Jul 26, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Link Item 5 -->
+                    <div class="aff-link-item">
+                        <div class="dropdown">
+                            <button class="aff-link-menu dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="#">View Analytics</a></li>
+                            </ul>
+                        </div>
+
+                        <h5 class="aff-link-item-title">NIOR Eternal Youth Anti-Aging Cream - Day and Night 50ml</h5>
+                        <div class="aff-link-item-url">
+                            <span>https://herlan.com/4ILSFBJ</span>
+                            <button class="aff-copy-btn">
+                                <i class="bi bi-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="aff-link-item-original">Original: https://herlan.com/product/nior-eternal-youth-anti-aging-cream/</p>
+
+                        <div class="aff-link-item-stats">
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <span>Visitor: <strong>250</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-bag-fill"></i>
+                                <span>Purchase: <strong>24</strong></span>
+                            </div>
+                            <div class="aff-link-stat">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>Revenue: <strong>৳5,000</strong></span>
+                            </div>
+                            <span class="aff-link-date">Jul 26, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="aff-pagination mt-4">
+                    <ul class="pagination justify-content-center mb-0">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- Other Tabs (Empty placeholders) -->
+            <div class="tab-pane fade" id="influencer-earnings" role="tabpanel">
+                <p class="text-muted">Your Earnings content goes here...</p>
+            </div>
+            <div class="tab-pane fade" id="influencer-edit-profile" role="tabpanel">
+                <p class="text-muted">Edit Profile content goes here...</p>
+            </div>
+            <div class="tab-pane fade" id="influencer-bank-details" role="tabpanel">
+                <p class="text-muted">Bank Details content goes here...</p>
+            </div>
+            <div class="tab-pane fade" id="influencer-sales-history" role="tabpanel">
+                <p class="text-muted">Sales History content goes here...</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+    // Copy to clipboard functionality
+    document.querySelectorAll('.aff-copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const textToCopy = this.closest('.aff-link-item-url')?.querySelector('span')?.textContent
+                || this.closest('.mb-3')?.nextElementSibling?.textContent
+                || 'https://herlan.com/4ILSFBJ';
+
+            navigator.clipboard.writeText(textToCopy.trim()).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="bi bi-check"></i> Copied';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+    });
+</script>
+</body>
+</html>
