@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <div class="influencer-album-card influencer-album-card-collage influencer-album-card-media dropdown">
+                            <div style="cursor:pointer;" class="influencer-album-card influencer-album-card-collage influencer-album-card-media dropdown">
                                 <button class="influencer-album-menu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-three-dots-vertical"></i>
                                 </button>
@@ -1485,5 +1485,10 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="js/script.js"></script>
+<script>
+    $(document).on('click', '.influencer-album-collage', function () {
+        location.href = 'influencer-profile-product-afi-history.html';
+    })
+</script>
 </body>
 </html>
