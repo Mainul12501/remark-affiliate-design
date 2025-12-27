@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mainul12501/css-common-helper-classes/helper.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -140,13 +141,13 @@
                 <div class="influencer-albums-content">
                     <div class="influencer-albums-toolbar">
                         <input type="text" class="form-control influencer-albums-search" placeholder="Search Product">
-                        <select class="form-select influencer-albums-select" style="">
+                        <select class="form-select influencer-albums-select">
                             <option selected>Select Category</option>
                             <option>Skincare</option>
                             <option>Makeup</option>
                             <option>Hair Care</option>
                         </select>
-                        <button class="btn btn-dark influencer-albums-filter" style="">Filter</button>
+                        <button class="btn btn-dark influencer-albums-filter">Filter</button>
                     </div>
 
                     <div class="row g-4 influencer-albums-grid">
@@ -156,7 +157,7 @@
                                     <button class="influencer-album-add-icon" type="button" id="albumAddDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">+</button>
                                     <div class="dropdown-menu influencer-album-add-dropdown" aria-labelledby="albumAddDropdown">
                                         <a class="dropdown-item influencer-add-option" href="#" data-bs-toggle="modal" data-bs-target="#addProductModal">Upload Product</a>
-                                        <a class="dropdown-item influencer-add-option influencer-add-option-link" href="#">Create Album</a>
+                                        <a class="dropdown-item influencer-add-option influencer-add-option-link" href="#" data-bs-toggle="modal" data-bs-target="#createAlbumModal">Create Album</a>
                                     </div>
                                 </div>
                                 <p class="mb-0">Use at Least 1 product</p>
@@ -280,250 +281,273 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="influencer-earnings" role="tabpanel" aria-labelledby="influencer-earnings-tab" tabindex="0">
-                <div class="earnings-content ">
+                <div class="ye-wrapper">
                     <!-- Tax Banner -->
-                    <div class="earnings-tax-banner mb-3">
-                        <i class="bi bi-receipt-cutoff me-2"></i>
-                        <span>Applicable Tax: <span class="earnings-tax-red">7.5%</span>, <a href="#" class="earnings-tax-link">Submit TIN</a> and reduce <span class="earnings-tax-green">2.5%</span></span>
+                    <div class="ye-tax-banner bg-white rounded-3 p-3 mb-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-receipt-cutoff"></i>
+                        <span>Applicable Tax: <span class="text-danger fw-semibold">7.5%</span>, <a href="#" class="text-dark fw-semibold">Submit TIN</a> and reduce <span class="text-success fw-semibold">2.5%</span></span>
                     </div>
 
-                    <!-- Download Statement -->
+                    <!-- Earning Summary Panel -->
+                    <div class="ye-summary-panel bg-white rounded-3 p-3 p-md-4 mb-3">
 
 
-                    <!-- Earning Summary & Available Balance Row -->
-                    <div class="row g-3 mb-3 mt-3 bg-white">
-                        <div class="row pt-3">
-                            <div class="col-12">
-                                <div class="earnings-download-section ">
-                                    <button class="btn earnings-download-btn">
-                                        <i class="bi bi-download me-2"></i>
-                                        Download Your Earning Statement
+
+
+                        <!-- Filters Row - Desktop -->
+                        <div class="row g-3 align-items-end">
+                            <div class=" col-lg-7">
+
+                                <!-- Download Statement -->
+                                <div class="ye-download mb-3">
+                                    <button class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2">
+                                        <span>Download Your Earning Statement</span>
+                                        <i class="bi bi-download"></i>
                                     </button>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Left Column: Earning Summary with Filters -->
-                        <div class="col-lg-8">
 
-                            <div class="earnings-summary-section bg-white rounded-3 p-3 border-0">
                                 <!-- Earning Summary Title -->
                                 <div class="d-flex align-items-center gap-2 mb-3">
-                                    <h6 class="earnings-summary-title mb-0">Earning Summary</h6>
-                                    <span class="earnings-privacy-badge">
-                                        <i class="bi bi-lock-fill me-1"></i>
+                                    <h6 class="ye-title fw-semibold mb-0">Earning Summery</h6>
+                                    <span class="ye-privacy-badge">
+                                        <i class="bi bi-lock-fill"></i>
                                         Privacy Protected
                                     </span>
                                 </div>
 
-                                <!-- Date Range and Filter -->
-                                <div class="row g-2 align-items-end">
-                                    <div class="col-md-5 col-6">
-                                        <div class="earnings-date-wrapper position-relative">
-                                            <input type="date" class="form-control earnings-date-input" value="2024-01-01">
-                                            <i class="bi bi-calendar3 earnings-calendar-icon"></i>
-                                        </div>
+                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                    <div class="ye-date-field position-relative">
+                                        <input type="text" class="form-control ye-date-input" value="1 Jan, 2024" readonly>
+                                        <i class="bi bi-calendar3 ye-calendar-icon"></i>
                                     </div>
-                                    <div class="col-md-1 col-12 d-none d-md-block text-center mb-2">
-                                        <span class="earnings-date-separator">To</span>
+                                    <span class="ye-date-to d-none d-md-inline">To</span>
+                                    <div class="ye-date-field position-relative">
+                                        <input type="text" class="form-control ye-date-input" placeholder="Select date" readonly>
+                                        <i class="bi bi-calendar3 ye-calendar-icon"></i>
                                     </div>
-                                    <div class="col-md-5 col-6">
-                                        <div class="earnings-date-wrapper position-relative">
-                                            <input type="date" class="form-control earnings-date-input" value="2024-01-01">
-                                            <i class="bi bi-calendar3 earnings-calendar-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-2 d-md-none">
-                                        <button class="btn btn-dark earnings-filter-btn w-100">Filter</button>
-                                    </div>
+                                    <button class="btn btn-dark ye-filter-btn">Filter</button>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Right Column: Available Balance -->
-                        <div class="col-lg-4">
-<!--                            <div class="earnings-balance-card-wrapper">-->
-<!--&lt;!&ndash;                                <button class="btn btn-dark earnings-filter-btn d-none d-md-block mb-2 ms-auto">Filter</button>&ndash;&gt;-->
-<!--                                <div class="earnings-balance-card p-0">-->
-<!--                                    <p class="earnings-balance-label mb-1 border-bottom border-light ps-2">Available Balance</p>-->
-<!--                                    <div class="earnings-stats-row mt-0">-->
-<!--                                        <div class="earnings-stat-item-inline border-light border-end">-->
-<!--                                            <h3 class="earnings-balance-amount me-2 ">৳50,000</h3>-->
-<!--&lt;!&ndash;                                            <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                                            <span class="earnings-stat-value-inline">৳10,00,000</span>&ndash;&gt;-->
-<!--                                        </div>-->
-<!--                                        <div class="earnings-stat-item-inline border-light border-end">-->
-<!--                                            <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>-->
-<!--                                            <span class="earnings-stat-value-inline">৳10,00,000</span>-->
-<!--                                        </div>-->
-<!--                                        <div class="earnings-stat-item-inline">-->
-<!--                                            <span class="earnings-stat-label-inline">TOTAL EARNING</span>-->
-<!--                                            <span class="earnings-stat-value-inline">৳50,000</span>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-                            <div class="bg-success" style="border-radius: 15px;">
-                                <h3 class="text-white border-bottom f-s-16 mb-0 py-2 px-2" style="font-size: 16px;">Available Balance</h3>
-                                <div class="row px-2">
-                                    <div class="col-4 border-end border-white">
-                                        <div class="py-2">
-                                            <h3 class="earnings-balance-amount me-2 py-2 " style="font-size: 26px;">৳50,000</h3>
+                            <div class=" col-lg-5">
+                                <!-- Available Balance Card -->
+                                <div class="" style="border-radius: 15px; background-color: #00B469;">
+                                    <h3 class="text-white border-bottom f-s-16 mb-0 py-2 px-2" style="font-size: 16px;">Available Balance</h3>
+                                    <div class="row px-2">
+                                        <div class="col-4 border-end border-white">
+                                            <div class="py-2">
+                                                <h3 class="earnings-balance-amount me-2 py-2 text-white" style="font-size: 26px;">৳50,000</h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-4 border-end border-white">
-                                        <div class="">
-                                            <span class="earnings-stat-label-inline">TOTAL CONVERSION</span>
-                                            <span class="earnings-stat-value-inline">৳10,00,000</span>
+                                        <div class="col-4 border-end border-white">
+                                            <div class="">
+                                                <span class="earnings-stat-label-inline text-white f-s-11">TOTAL CONVERSION</span>
+                                                <br>
+                                                <span class="earnings-stat-value-inline text-white f-s-16">৳10,00,000</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="">
-                                            <span class="earnings-stat-label-inline">TOTAL EARNING</span>
-                                            <span class="earnings-stat-value-inline">৳50,00,000</span>
+                                        <div class="col-4">
+                                            <div class="">
+                                                <span class="earnings-stat-label-inline text-white f-s-11">TOTAL EARNING</span>
+                                                <br>
+                                                <span class="earnings-stat-value-inline text-white f-s-16">৳50,00,000</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
 
-                    <!-- Main Chart Section -->
-                    <div class="earnings-chart-wrapper bg-white rounded-3 p-3 mb-3">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <div id="earningsMainChart" class="earnings-main-chart"></div>
-                            </div>
-                        </div>
+                    <!-- Main Chart Section - Desktop Only -->
+                    <div class="ye-chart-panel bg-white rounded-3 p-3 mb-4 d-none d-md-block">
+                        <div id="earningsMainChart" class="ye-main-chart"></div>
                     </div>
 
                     <!-- Individual Product Earnings -->
-                    <div class="earnings-products-section">
-                        <h6 class="earnings-section-title mb-3">Individual Product Earnings:</h6>
+                    <div class="ye-products-section">
+                        <h6 class="ye-products-title fw-semibold mb-3">Individual Product Earnings:</h6>
 
-                        <!-- Product Item 1 -->
-                        <div class="earnings-product-card bg-white rounded-3 p-3 mb-3">
-                            <div class="row align-items-center g-3">
-<!--                                <div class="col-lg-2 col-md-3 col-12">-->
-<!--                                    <div class="d-flex align-items-center gap-3">-->
-<!--                                        <img src="images/influencer/botol.png" alt="Product" class="earnings-product-img">-->
-<!--                                        <div class="d-lg-none">-->
-<!--                                            <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>-->
-<!--                                            <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>-->
-<!--                                            <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>-->
-<!--                                            <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                                <div class="col-lg-4 col-md-3 d-none d-lg-block">
-                                    <img src="images/influencer/botol.png" alt="Product" class="earnings-product-img">
-                                    <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                    <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                    <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                    <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div id="productChart1" class="earnings-product-chart"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-12 col-12">
-                                    <div class="row g-3 text-center text-lg-start">
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Quantity</p>
-                                            <p class="earnings-metric-value mb-0">8</p>
+                        <!-- Product Card 1 -->
+                        <div class="ye-product-card bg-white rounded-3 p-3 mb-3">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-12 col-md-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="images/influencer/botol.png" alt="Product" class="ye-product-img">
+                                        <div class="ye-product-info">
+                                            <p class="ye-product-price mb-1"><span class="text-decoration-line-through text-muted">৳500</span> <strong>৳450</strong></p>
+                                            <p class="ye-product-brand mb-1">BLAZE O' SKIN</p>
+                                            <h6 class="ye-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
+                                            <p class="ye-product-weight mb-0">Net Weight: 250ml</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Total Conversion</p>
-                                            <p class="earnings-metric-value mb-0">৳3,600</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <div id="productChart1" class="ye-product-chart"></div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Quantity</p>
+                                            <p class="ye-metric-value mb-0">8</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Revenue</p>
-                                            <p class="earnings-metric-value mb-0">Tk 400</p>
-                                            <p class="earnings-reward-text mb-0">(Reward 10%)</p>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Total Conversion</p>
+                                            <p class="ye-metric-value mb-0">৳3,600</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Revenue</p>
+                                            <p class="ye-metric-value mb-0 fw-bold">Tk 400</p>
+                                            <p class="ye-metric-reward mb-0">(Reward 10%)</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Product Item 2 -->
-                        <div class="earnings-product-card bg-white rounded-3 p-3 mb-3">
-                            <div class="row align-items-center g-3">
-                                <div class="col-lg-2 col-md-3 col-12">
+                        <!-- Product Card 2 -->
+                        <div class="ye-product-card bg-white rounded-3 p-3 mb-3">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-12 col-md-3">
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="images/influencer/Rectangle-301.png" alt="Product" class="earnings-product-img">
-                                        <div class="d-lg-none">
-                                            <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                            <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                            <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                            <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
+                                        <img src="images/influencer/botol.png" alt="Product" class="ye-product-img">
+                                        <div class="ye-product-info">
+                                            <p class="ye-product-price mb-1"><span class="text-decoration-line-through text-muted">৳500</span> <strong>৳450</strong></p>
+                                            <p class="ye-product-brand mb-1">BLAZE O' SKIN</p>
+                                            <h6 class="ye-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
+                                            <p class="ye-product-weight mb-0">Net Weight: 250ml</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-3 d-none d-lg-block">
-                                    <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                    <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                    <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                    <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <div id="productChart2" class="ye-product-chart"></div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div id="productChart2" class="earnings-product-chart"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-12 col-12">
-                                    <div class="row g-3 text-center text-lg-start">
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Quantity</p>
-                                            <p class="earnings-metric-value mb-0">8</p>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Quantity</p>
+                                            <p class="ye-metric-value mb-0">8</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Total Conversion</p>
-                                            <p class="earnings-metric-value mb-0">৳3,600</p>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Total Conversion</p>
+                                            <p class="ye-metric-value mb-0">৳3,600</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Revenue</p>
-                                            <p class="earnings-metric-value mb-0">Tk 400</p>
-                                            <p class="earnings-reward-text mb-0">(Reward 10%)</p>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Revenue</p>
+                                            <p class="ye-metric-value mb-0 fw-bold">Tk 400</p>
+                                            <p class="ye-metric-reward mb-0">(Reward 10%)</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Product Item 3 -->
-                        <div class="earnings-product-card bg-white rounded-3 p-3 mb-3">
-                            <div class="row align-items-center g-3">
-                                <div class="col-lg-2 col-md-3 col-12">
+                        <!-- Product Card 3 -->
+                        <div class="ye-product-card bg-white rounded-3 p-3 mb-3">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-12 col-md-3">
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="images/influencer/Rectangle-301.png" alt="Product" class="earnings-product-img">
-                                        <div class="d-lg-none">
-                                            <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                            <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                            <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                            <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
+                                        <img src="images/influencer/botol.png" alt="Product" class="ye-product-img">
+                                        <div class="ye-product-info">
+                                            <p class="ye-product-price mb-1"><span class="text-decoration-line-through text-muted">৳500</span> <strong>৳450</strong></p>
+                                            <p class="ye-product-brand mb-1">BLAZE O' SKIN</p>
+                                            <h6 class="ye-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
+                                            <p class="ye-product-weight mb-0">Net Weight: 250ml</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-3 d-none d-lg-block">
-                                    <p class="earnings-product-price mb-0">৳450 <span class="text-decoration-line-through text-muted">৳450</span></p>
-                                    <p class="earnings-product-commission mb-0">BLAZE (7.5%)</p>
-                                    <h6 class="earnings-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
-                                    <p class="earnings-product-weight mb-0">Net Weight: 250ml</p>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <div id="productChart3" class="ye-product-chart"></div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div id="productChart3" class="earnings-product-chart"></div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Quantity</p>
+                                            <p class="ye-metric-value mb-0">8</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Total Conversion</p>
+                                            <p class="ye-metric-value mb-0">৳3,600</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Revenue</p>
+                                            <p class="ye-metric-value mb-0 fw-bold">Tk 400</p>
+                                            <p class="ye-metric-reward mb-0">(Reward 10%)</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-4 col-md-12 col-12">
-                                    <div class="row g-3 text-center text-lg-start">
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Quantity</p>
-                                            <p class="earnings-metric-value mb-0">8</p>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="ye-product-card bg-white rounded-3 p-3 mb-3">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-12 col-md-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="images/influencer/botol.png" alt="Product" class="ye-product-img">
+                                        <div class="ye-product-info">
+                                            <p class="ye-product-price mb-1"><span class="text-decoration-line-through text-muted">৳500</span> <strong>৳450</strong></p>
+                                            <p class="ye-product-brand mb-1">BLAZE O' SKIN</p>
+                                            <h6 class="ye-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
+                                            <p class="ye-product-weight mb-0">Net Weight: 250ml</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Total Conversion</p>
-                                            <p class="earnings-metric-value mb-0">৳3,600</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <div id="productChart4" class="ye-product-chart"></div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Quantity</p>
+                                            <p class="ye-metric-value mb-0">8</p>
                                         </div>
-                                        <div class="col-4 col-lg-4">
-                                            <p class="earnings-metric-label mb-0">Revenue</p>
-                                            <p class="earnings-metric-value mb-0">Tk 400</p>
-                                            <p class="earnings-reward-text mb-0">(Reward 10%)</p>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Total Conversion</p>
+                                            <p class="ye-metric-value mb-0">৳3,600</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Revenue</p>
+                                            <p class="ye-metric-value mb-0 fw-bold">Tk 400</p>
+                                            <p class="ye-metric-reward mb-0">(Reward 10%)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="ye-product-card bg-white rounded-3 p-3 mb-3">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-12 col-md-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="images/influencer/botol.png" alt="Product" class="ye-product-img">
+                                        <div class="ye-product-info">
+                                            <p class="ye-product-price mb-1"><span class="text-decoration-line-through text-muted">৳500</span> <strong>৳450</strong></p>
+                                            <p class="ye-product-brand mb-1">BLAZE O' SKIN</p>
+                                            <h6 class="ye-product-name mb-1">Pimple Purifying Face Wash Cucumber Quench</h6>
+                                            <p class="ye-product-weight mb-0">Net Weight: 250ml</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <div id="productChart5" class="ye-product-chart"></div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Quantity</p>
+                                            <p class="ye-metric-value mb-0">8</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Total Conversion</p>
+                                            <p class="ye-metric-value mb-0">৳3,600</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="ye-metric-label mb-1">Revenue</p>
+                                            <p class="ye-metric-value mb-0 fw-bold">Tk 400</p>
+                                            <p class="ye-metric-reward mb-0">(Reward 10%)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -531,25 +555,21 @@
                         </div>
 
                         <!-- Pagination -->
-                        <nav class="earnings-pagination-wrapper mt-4" aria-label="Product earnings pagination">
+                        <nav class="ye-pagination mt-4" aria-label="Pagination">
                             <ul class="pagination justify-content-center mb-0">
                                 <li class="page-item">
-                                    <a class="page-link earnings-page-link" href="#" aria-label="Previous">
-                                        <i class="bi bi-chevron-left"></i>
-                                    </a>
+                                    <a class="page-link ye-page-link" href="#"><i class="bi bi-chevron-left"></i></a>
                                 </li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">2</a></li>
-                                <li class="page-item active"><a class="page-link earnings-page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">6</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">7</a></li>
-                                <li class="page-item"><a class="page-link earnings-page-link" href="#">...</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">2</a></li>
+                                <li class="page-item active"><a class="page-link ye-page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link ye-page-link" href="#">...</a></li>
                                 <li class="page-item">
-                                    <a class="page-link earnings-page-link" href="#" aria-label="Next">
-                                        <i class="bi bi-chevron-right"></i>
-                                    </a>
+                                    <a class="page-link ye-page-link" href="#"><i class="bi bi-chevron-right"></i></a>
                                 </li>
                             </ul>
                         </nav>
@@ -1243,6 +1263,206 @@
                         <div class="product-modal-img-wrapper">
                             <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
                             <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Organic Moringa Multi-Purpose Oil</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 650</span>
+                                <span class="product-price-current">৳ 550</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Album Modal -->
+<div class="modal fade" id="createAlbumModal" tabindex="-1" aria-labelledby="createAlbumModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg create-album-dialog">
+        <div class="modal-content create-album-content">
+            <div class="modal-header create-album-header">
+                <h5 class="modal-title create-album-title" id="createAlbumModalLabel">Create An Album</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body create-album-body">
+                <div class="create-album-layout">
+                    <!-- Left: Upload Image Section -->
+                    <div class="create-album-upload-section">
+                        <div class="create-album-dropzone" id="albumDropzone">
+                            <input type="file" id="albumImageInput" accept="image/jpeg,image/png" hidden>
+                            <div class="dropzone-content" id="dropzoneContent">
+                                <div class="dropzone-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="24" cy="24" r="24" fill="#4A4A4A"/>
+                                        <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <p class="dropzone-title">Upload Image</p>
+                                <p class="dropzone-subtitle">JPEG, PNG up to 1MB</p>
+                            </div>
+                            <div class="dropzone-preview" id="dropzonePreview" style="display: none;">
+                                <img src="" alt="Preview" id="albumPreviewImg">
+                                <button type="button" class="dropzone-remove-btn" id="removeAlbumImage">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form Section -->
+                    <div class="create-album-form-section">
+                        <!-- Album Title -->
+                        <div class="create-album-field">
+                            <label class="create-album-label">Album title</label>
+                            <input type="text" class="form-control create-album-input" placeholder="Enter album title">
+                        </div>
+
+                        <!-- Add Products -->
+                        <div class="create-album-field">
+                            <label class="create-album-label">Add Products</label>
+                            <div class="create-album-products">
+                                <button type="button" class="create-album-add-product-btn" id="openAlbumProductModal">
+                                    <span>+</span>
+                                </button>
+                                <div class="create-album-product-list" id="selectedProductsList">
+                                    <!-- Selected products will appear here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="create-album-actions">
+                            <button type="button" class="btn create-album-submit-btn">Submit</button>
+                            <button type="button" class="btn create-album-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+
+                        <!-- Terms -->
+                        <p class="create-album-terms">
+                            By submitting your content you agree to our <a href="#">Terms & Condition</a>, <a href="#">Privacy</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Album Product Selection Modal -->
+<div class="modal fade" id="albumProductModal" tabindex="-1" aria-labelledby="albumProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable product-modal-dialog">
+        <div class="modal-content product-modal-content">
+            <div class="modal-header product-modal-header">
+                <h5 class="modal-title product-modal-title" id="albumProductModalLabel">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body product-modal-body">
+                <!-- Search & Filter Section -->
+                <div class="product-modal-filters">
+                    <input type="text" class="form-control product-modal-search" placeholder="Search Product">
+                    <select class="form-select product-modal-select">
+                        <option selected>Select Category</option>
+                        <option value="skincare">Skincare</option>
+                        <option value="makeup">Makeup</option>
+                        <option value="haircare">Hair Care</option>
+                    </select>
+                    <button class="btn product-modal-filter-btn">Filter</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="product-modal-grid">
+                    <div class="product-modal-card album-product-selectable" data-product-id="1" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Blaze O' Skin" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-blaze">Blaze O' Skin</span>
+                            <p class="product-modal-name">Berry on Top Hydrating Moisturizing Cream</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-current">৳ 600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-modal-card album-product-selectable" data-product-id="2" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Ultra Hydrating Moisturizer SPF 40 PA++++</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 1,000</span>
+                                <span class="product-price-current">৳ 800</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-modal-card album-product-selectable" data-product-id="3" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Aloe Vera 99.99% Moisture Soothing Gel</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 590</span>
+                                <span class="product-price-current">৳ 502</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-modal-card album-product-selectable" data-product-id="4" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Lily" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-lily">Lily</span>
+                            <p class="product-modal-name">Lily Buttery Soft Moisturizing Skin Cream 50g</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 180</span>
+                                <span class="product-price-current">৳ 162</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-modal-card album-product-selectable" data-product-id="5" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Korean Rose Deep Cleansing Face Wash</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 450</span>
+                                <span class="product-price-current">৳ 380</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-modal-card album-product-selectable" data-product-id="6" data-product-img="images/influencer/Rectangle-301.png">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn album-select-btn">
                                 <i class="bi bi-heart"></i>
                             </button>
                         </div>

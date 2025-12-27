@@ -226,8 +226,8 @@ document.addEventListener('DOMContentLoaded', function() {
             chart: {
                 type: 'line',
                 backgroundColor: 'transparent',
-                height: 100,
-                margin: [10, 10, 30, 40]
+                height: 80,
+                margin: [5, 5, 25, 5]
             },
             title: {
                 text: null
@@ -327,11 +327,258 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Initialize product charts
-        ['productChart1', 'productChart2', 'productChart3'].forEach(function(chartId) {
+        ['productChart1', 'productChart2', 'productChart3', 'productChart4', 'productChart5'].forEach(function(chartId) {
             const chartElement = document.getElementById(chartId);
             if (chartElement) {
                 Highcharts.chart(chartId, productChartOptions);
             }
+        });
+
+        // Mobile Balance Chart (shown only on mobile inside green card)
+        const mobileChartElement = document.getElementById('mobileBalanceChart');
+        if (mobileChartElement) {
+            Highcharts.chart('mobileBalanceChart', {
+                chart: {
+                    type: 'areaspline',
+                    backgroundColor: 'transparent',
+                    height: 120,
+                    margin: [10, 10, 30, 10]
+                },
+                title: { text: null },
+                credits: { enabled: false },
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    lineColor: 'rgba(255,255,255,0.2)',
+                    tickLength: 0,
+                    labels: {
+                        style: {
+                            color: 'rgba(255,255,255,0.7)',
+                            fontSize: '9px'
+                        }
+                    }
+                },
+                yAxis: {
+                    title: { text: null },
+                    gridLineColor: 'transparent',
+                    labels: { enabled: false }
+                },
+                tooltip: { enabled: false },
+                legend: { enabled: false },
+                plotOptions: {
+                    areaspline: {
+                        fillColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                            stops: [
+                                [0, 'rgba(255, 255, 255, 0.3)'],
+                                [1, 'rgba(255, 255, 255, 0.05)']
+                            ]
+                        },
+                        lineColor: 'rgba(255, 255, 255, 0.8)',
+                        lineWidth: 2,
+                        marker: { enabled: false }
+                    }
+                },
+                series: [{
+                    data: [3200, 3500, 2800, 4100, 4500, 5200, 6100, 5900, 4800, 5500, 6200, 6400]
+                }]
+            });
+        }
+    }
+
+    // ===== CREATE ALBUM MODAL FUNCTIONALITY =====
+    const albumDropzone = document.getElementById('albumDropzone');
+    const albumFileInput = document.getElementById('albumImageInput');
+    const albumDropzoneContent = document.getElementById('dropzoneContent');
+    const albumDropzonePreview = document.getElementById('dropzonePreview');
+    const albumPreviewImg = document.getElementById('albumPreviewImg');
+    const albumRemoveBtn = document.getElementById('removeAlbumImage');
+
+    if (albumDropzone && albumFileInput) {
+        // Click to upload
+        albumDropzone.addEventListener('click', function(e) {
+            if (e.target.closest('.dropzone-remove-btn')) return;
+            albumFileInput.click();
+        });
+
+        // File input change
+        albumFileInput.addEventListener('change', function(e) {
+            handleAlbumFiles(e.target.files);
+        });
+
+        // Drag events
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            albumDropzone.addEventListener(eventName, preventAlbumDefaults, false);
+        });
+
+        function preventAlbumDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            albumDropzone.addEventListener(eventName, highlightAlbum, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            albumDropzone.addEventListener(eventName, unhighlightAlbum, false);
+        });
+
+        function highlightAlbum() {
+            albumDropzone.classList.add('dropzone-active');
+        }
+
+        function unhighlightAlbum() {
+            albumDropzone.classList.remove('dropzone-active');
+        }
+
+        // Handle drop
+        albumDropzone.addEventListener('drop', function(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleAlbumFiles(files);
+        });
+
+        function handleAlbumFiles(files) {
+            if (files.length === 0) return;
+
+            const file = files[0];
+
+            // Validate file type
+            if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+                alert('Please upload only JPEG or PNG images.');
+                return;
+            }
+
+            // Validate file size (1MB max)
+            if (file.size > 1024 * 1024) {
+                alert('File size must be less than 1MB.');
+                return;
+            }
+
+            // Show preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                albumPreviewImg.src = e.target.result;
+                albumDropzoneContent.style.display = 'none';
+                albumDropzonePreview.style.display = 'flex';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Remove image
+        if (albumRemoveBtn) {
+            albumRemoveBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                albumPreviewImg.src = '';
+                albumFileInput.value = '';
+                albumDropzonePreview.style.display = 'none';
+                albumDropzoneContent.style.display = 'flex';
+            });
+        }
+    }
+
+    // ===== MODAL STACKING - Keep Create Album open when Product Modal opens =====
+    const createAlbumModal = document.getElementById('createAlbumModal');
+    const albumProductModal = document.getElementById('albumProductModal');
+    const openProductModalBtn = document.getElementById('openAlbumProductModal');
+
+    if (openProductModalBtn && albumProductModal && createAlbumModal) {
+        // Open product modal without closing create album modal
+        openProductModalBtn.addEventListener('click', function() {
+            const productModal = new bootstrap.Modal(albumProductModal, {
+                backdrop: true
+            });
+            productModal.show();
+        });
+
+        // When product modal opens, ensure create album modal stays visible
+        albumProductModal.addEventListener('show.bs.modal', function() {
+            createAlbumModal.style.zIndex = '1055';
+            setTimeout(() => {
+                document.body.classList.add('modal-open');
+            }, 10);
+        });
+
+        // When product modal closes, restore create album modal z-index
+        albumProductModal.addEventListener('hidden.bs.modal', function() {
+            createAlbumModal.style.zIndex = '';
+            document.body.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = '';
+        });
+    }
+
+    // ===== PRODUCT SELECTION FOR ALBUM =====
+    const selectedAlbumProducts = new Map();
+    const albumProductList = document.getElementById('selectedProductsList');
+
+    // Handle product selection in album modal
+    document.querySelectorAll('.album-product-selectable').forEach(card => {
+        card.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const productImg = this.dataset.productImg;
+
+            if (selectedAlbumProducts.has(productId)) {
+                // Deselect
+                selectedAlbumProducts.delete(productId);
+                this.classList.remove('product-selected');
+            } else {
+                // Select
+                selectedAlbumProducts.set(productId, productImg);
+                this.classList.add('product-selected');
+            }
+
+            updateAlbumSelectedProductsList();
+        });
+    });
+
+    function updateAlbumSelectedProductsList() {
+        if (!albumProductList) return;
+
+        albumProductList.innerHTML = '';
+        selectedAlbumProducts.forEach((imgSrc, id) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'album-selected-product-thumb';
+            thumb.innerHTML = `
+                <img src="${imgSrc}" alt="Product">
+                <button type="button" class="album-remove-product-btn" data-id="${id}">
+                    <i class="bi bi-x"></i>
+                </button>
+            `;
+            albumProductList.appendChild(thumb);
+        });
+
+        // Add remove handlers
+        document.querySelectorAll('.album-remove-product-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const id = this.dataset.id;
+                selectedAlbumProducts.delete(id);
+                document.querySelector(`.album-product-selectable[data-product-id="${id}"]`)?.classList.remove('product-selected');
+                updateAlbumSelectedProductsList();
+            });
+        });
+    }
+
+    // Reset when modal closes
+    if (createAlbumModal) {
+        createAlbumModal.addEventListener('hidden.bs.modal', function() {
+            // Reset dropzone
+            if (albumPreviewImg) albumPreviewImg.src = '';
+            if (albumFileInput) albumFileInput.value = '';
+            if (albumDropzonePreview) albumDropzonePreview.style.display = 'none';
+            if (albumDropzoneContent) albumDropzoneContent.style.display = 'flex';
+
+            // Reset products
+            selectedAlbumProducts.clear();
+            document.querySelectorAll('.album-product-selectable').forEach(card => {
+                card.classList.remove('product-selected');
+            });
+            updateAlbumSelectedProductsList();
+
+            // Reset form
+            const albumTitleInput = document.querySelector('.create-album-input');
+            if (albumTitleInput) albumTitleInput.value = '';
         });
     }
 });
