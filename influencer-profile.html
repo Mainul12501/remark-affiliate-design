@@ -100,7 +100,7 @@
                                     <div class="row g-3">
                                         <div class="col-6">
                                             <p class="small text-muted mb-0">AVAILABLE BALANCE</p>
-                                            <p class="fw-bold mb-0">ƒ,15,000</p>
+                                            <p class="fw-bold mb-0">&#x9F3;,15,000</p>
                                         </div>
                                         <div class="col-6">
                                             <p class="small text-muted mb-0">THIS MONTH SOLD</p>
@@ -152,7 +152,13 @@
                     <div class="row g-4 influencer-albums-grid">
                         <div class="col-lg-4 col-md-6">
                             <div class="influencer-album-card influencer-album-card-add">
-                                <div class="influencer-album-add-icon">+</div>
+                                <div class="influencer-album-add-wrapper dropdown">
+                                    <button class="influencer-album-add-icon" type="button" id="albumAddDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">+</button>
+                                    <div class="dropdown-menu influencer-album-add-dropdown" aria-labelledby="albumAddDropdown">
+                                        <a class="dropdown-item influencer-add-option" href="#" data-bs-toggle="modal" data-bs-target="#addProductModal">Upload Product</a>
+                                        <a class="dropdown-item influencer-add-option influencer-add-option-link" href="#">Create Album</a>
+                                    </div>
+                                </div>
                                 <p class="mb-0">Use at Least 1 product</p>
                             </div>
                         </div>
@@ -1116,6 +1122,142 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+<!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable product-modal-dialog">
+        <div class="modal-content product-modal-content">
+            <div class="modal-header product-modal-header">
+                <h5 class="modal-title product-modal-title" id="addProductModalLabel">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body product-modal-body">
+                <!-- Search & Filter Section -->
+                <div class="product-modal-filters">
+                    <input type="text" class="form-control product-modal-search" placeholder="Search Product">
+                    <select class="form-select product-modal-select">
+                        <option selected>Select Category</option>
+                        <option value="skincare">Skincare</option>
+                        <option value="makeup">Makeup</option>
+                        <option value="haircare">Hair Care</option>
+                        <option value="bodycare">Body Care</option>
+                    </select>
+                    <button class="btn product-modal-filter-btn">Filter</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="product-modal-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Blaze O' Skin" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-blaze">Blaze O' Skin</span>
+                            <p class="product-modal-name">Berry on Top Hydrating Moisturizing Cream</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-current">৳ 600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Ultra Hydrating Moisturizer SPF 40 PA++++</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 1,000</span>
+                                <span class="product-price-current">৳ 800</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Aloe Vera 99.99% Moisture Soothing Gel</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 590</span>
+                                <span class="product-price-current">৳ 502</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Lily" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-lily">Lily</span>
+                            <p class="product-modal-name">Lily Buttery Soft Moisturizing Skin Cream 50g</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 180</span>
+                                <span class="product-price-current">৳ 162</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Korean Rose Deep Cleansing Face Wash</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 450</span>
+                                <span class="product-price-current">৳ 380</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-modal-card">
+                        <div class="product-modal-img-wrapper">
+                            <img src="images/influencer/Rectangle-301.png" alt="Nior" class="product-modal-img">
+                            <button class="product-modal-fav-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-brand product-brand-nior">Nior</span>
+                            <p class="product-modal-name">Nior Organic Moringa Multi-Purpose Oil</p>
+                            <div class="product-modal-price">
+                                <span class="product-price-old">৳ 650</span>
+                                <span class="product-price-current">৳ 550</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
